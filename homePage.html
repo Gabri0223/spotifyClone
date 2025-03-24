@@ -30,7 +30,7 @@
                   >
                     <li class="nav-item dropdown d-none d-lg-block">
                       <a
-                        class="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle fs-3"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -52,13 +52,13 @@
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="#"
                         ><div class="row d-flex align-items-baseline">
-                          <div class="col-3 offset-4 offset-lg-0">
+                          <div class="col-5 offset-4 offset-lg-0">
                             <i
                               class="bi bi-house-door-fill fs-3 text-white"
                             ></i>
                           </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">Home</p>
+                          <div class="col-7">
+                            <p class="d-none d-lg-block fw-bold">Home</p>
                           </div>
                         </div></a
                       >
@@ -66,11 +66,11 @@
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#"
                         ><div class="row d-flex">
-                          <div class="col-3 offset-4 offset-lg-0">
+                          <div class="col-5 offset-4 offset-lg-0">
                             <i class="bi bi-search fs-3 text-white"></i>
                           </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">Cerca</p>
+                          <div class="col-7">
+                            <p class="d-none d-lg-block fw-bold">Cerca</p>
                           </div>
                         </div></a
                       >
@@ -78,11 +78,13 @@
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#">
                         <div class="row">
-                          <div class="col-3 offset-4 offset-lg-0">
+                          <div class="col-5 offset-4 offset-lg-0">
                             <i class="bi bi-collection fs-3 text-white"></i>
                           </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">La tua libreria</p>
+                          <div class="col-7">
+                            <p class="d-none d-lg-block fw-bold">
+                              La tua libreria
+                            </p>
                           </div>
                         </div>
                       </a>
@@ -90,6 +92,69 @@
                   </ul>
                 </div>
               </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <ul
+                class="d-flex flex-column navbar-nav me-auto mb-2 mb-lg-0 mt-4"
+              >
+                <li style="padding-left: 1em" class="nav-item">
+                  <div class="row">
+                    <div class="col-2">
+                      <i
+                        class="bi bi-plus-square fs-3 text-black bg-white bg-opacity-75 px-1 rounded-1"
+                      ></i>
+                    </div>
+                    <div class="col-8">
+                      <a
+                        class="nav-link fw-bold text-light"
+                        aria-current="page"
+                        href="#"
+                      >
+                        Crea playlist</a
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li style="padding-left: 1em" class="nav-item">
+                  <div class="row">
+                    <div class="col-2 mt-2">
+                      <i
+                        class="bi bi-heart-fill fs-6 ps-2 pe-2 py-1"
+                        id="icona"
+                      ></i>
+                    </div>
+                    <div class="col-10">
+                      <a
+                        class="nav-link fw-bold text-light"
+                        aria-current="page"
+                        href="#"
+                      >
+                        Brani che ti piacciono</a
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li style="padding-left: 1em" class="nav-item">
+                  <div class="row">
+                    <div class="col-2">
+                      <i
+                        class="bi bi-bookmark-fill fs-3 text-white bg-success px-1"
+                      ></i>
+                    </div>
+                    <div class="col-10">
+                      <a
+                        class="nav-link fw-bold text-light"
+                        aria-current="page"
+                        href="#"
+                      >
+                        I tuoi episodi</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="row d-none d-lg-block">
@@ -114,8 +179,90 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-7"></div>
+        <div class="col-12 col-lg-7 bg-dark mt">
+          <div class="container-fluid mt-4">
+            <div class="row">
+              <div class="col-10 d-none d-lg-block text-white">
+                <i class="bi bi-arrow-left-circle bg-black fs-3 rounded-5"></i>
+                <i class="bi bi-arrow-right-circle bg-black fs-3 rounded-5"></i>
+              </div>
+              <div class="col-2 d-none d-lg-block">
+                <div class="dropdown">
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="background-color: black"
+                  >
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD6ElEQVRYha2XS2wbRRjH/58dUhKlSdUSqxVVRepLD+0pu1Efp0ogQTkW8ThW4iEuUNJkHFLHiWs7rtd9wg0EEjc4II45IA4cqGht3xA3gwhUrVs1oqgSUNL5OGR3MzM7u+s+Rlp5PfvN/P7ff+e1hM1C/i9DL4T0wn3GRUrGb6g2JuNKhV/Lzx5FVHjfAli5YLlPg58m0KVHgQcCgiwJD2clX8vPCgJVmbH2OAICqJp1mhi+ulcIAjUekRuyMkZFJMDW+Nvn5gQDjVBtVGbaqwtdzxiV5mCMdPz17nkhGQ01iKO4vmfEgNq50UHElc93FYUEN9TemQEiPN0v0CYgTq22LlzKlQSDGwSpBxHA4A/UWKV96tQcSAsAgDM7lqxwn+hMdZsdS7MAHrfAAdiYBXGFAfDMtoqQsaOd3amu14E+fuIWMDMGACjRgbe21oSEbFhHI+C4m5nHzSLbM7WO4xzg14brggErXALuoV+80PYre8VO/9Z875Hm30+c3KL+twngl7Y0hATFwl/87Ww76Hxlz5zDTDfaeVFCshMAgOHM4GqSAD4y0PThelsCQwLOq38st4PYr3bPTzKo5ZPKrbxYtGgO82jlxS0AuTgBvJ/OLyVl/uaNamj7p7uKk5KpbYQttfLivJmUD+8BGDf7NR1YV9qocGf61pnQ9uZ4yZFM7U2hWvxfJuTKhOgByGn7rEUA/cSnqhnwtBojAad8ZzEc7aUd5UmAWrpL4b+C2/XK6pOVPR/2mHzbLRPUdIB+WJ+9mAHeAwDJ7F78cyGY5zi5reJw1Hb/KRfcruepiC+fPd1jIJewMZBtFtDKv4WP/2P5zGf3iuGAOzFScyRTy/SQAEhGwe02vSAWAD7ZudCDHf6jcs9Jx67wXHB8qO5szXJrLCsxmn2A0azEmH+NZGXh5dW6pzY8N77YG83KXBg38ABPbVA6btdz1Ni480CQHL8w6DmsvXPazByIwBe2lzcGXLRE4KoA62o7lW06DLSM6hD+xvWaBn9/rGqFM6NtwENe7FK8DxcOBouMDf7OzYoGPzGyHIFvbNXoHPnVc83+0wSAgOVoHUGCCuJ2WYMfHzobhQNgRufYaj1iu1qStuN/zAoJFKprJQ3+/KBntx1ov369FsBjZ2JfB5LA9o/uFkP4EM4NHsjid0BGMgfQeftmRbU99mSU5IAG/+LevJb5BDKCY975zO1you19Cwjg3/w95ylVBIB+xnQ1Q/DUWGa0K2uLaXDt5B0/CAnbJWPhu/tChWvfC1fXZwoE1PyKzuW7RdX2tO/LsD/zY5QAYB8uHO4jAwDAK8P1d+MSSSt9LcWm4idZ/gdDEIBXpbWHEwAAAABJRU5ErkJggg=="
+                      alt="user-pic"
+                    />
+                    Team 5 - BW2
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Lidia</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-12 col-lg-2"></div>
+        <div class="col-12 col-lg-7"></div>
+        <div class="col-2 d-none d-lg-block bg-black">
+          <div class="pt-3">
+            <div class="d-flex justify-content-between align-items-baseline">
+              <h5 class="text-white mt-3 mb-5">Attività Amici</h5>
+              <div class="d-flex text-secondary fs-4 gap-3">
+                  <i class="bi bi-person-plus"></i>
+                  <i class="bi bi-x-lg"></i>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between  text-secondary">
+              <div class="">
+                  <img class="rounded-circle" height="40" width="40" src="https://img.uefa.com/imgml/TP/players/1/2025/cutoff/250068805.webp" alt="">
+              </div>
+              <div class="d-flex flex-column text-secondary justify-content-between">
+                  <h6 class="mb-0 fw-bolder">Charlie Hookham</h6>
+                  <p class="m-0 small">In camera • Yumi Zourna</p>
+                  <small><i class="bi bi-record-circle me-2"></i>EP III</small>
+              </div>
+              <div>
+                  <span class="text-secondary small"> 4 ore</span>
+              </div>
+          </div>
+          <div class="d-flex justify-content-between mt-5 text-secondary">
+              <div><img class="rounded-circle" height="40" width="40" src="https://img.uefa.com/imgml/TP/players/1/2025/cutoff/250068805.webp" alt=""></div>
+              <div class="d-flex flex-column text-secondary">
+                  <h6 class="mb-0 fw-bolder">lightdark02</h6>
+                  <p class="m-0 small ">Aimed to Kill • Jade LeMac</p>
+                  <small><i class="bi bi-record-circle me-2"></i>Aimed to KIll</small>
+              </div>
+              <div>
+                  <span class="text-secondary small">8 ore</span>
+              </div>
+          </div>
+          <div class="d-flex justify-content-between mt-5 text-secondary">
+              <div><img class="rounded-circle" height="40" width="40" src="https://img.uefa.com/imgml/TP/players/1/2025/cutoff/250068805.webp" alt=""></div>
+              <div class="d-flex flex-column text-secondary">
+                  <h6 class="mb-0 fw-bolder">Valeria Traverso</h6>
+                  <p class="m-0 small ">New Kings • Sleeping Wolf</p>
+                  <small><i class="bi bi-music-note-beamed me-2"></i></i>Twint Badass mood</small>
+              </div>
+              <div>
+                  <span class="text-secondary small">3 giorni</span>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
