@@ -6,3 +6,7 @@
     background: linear-gradient(153deg, rgba(146,5,232,1) 0%, rgba(80,16,153,1) 35%, rgba(164,166,240,1) 100%);
         color: white;
       }
+
+#Scrolling-col li {
+    margin-top: 15px;
+}
