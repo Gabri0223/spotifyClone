@@ -17,9 +17,12 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body class="bg-black">
-    <div class="container-fluid bg-black d-flex" data-bs-theme="dark">
+    <div
+      class="container-fluid bg-black d-flex justify-content-center"
+      data-bs-theme="dark"
+    >
       <div class="row flex-column-reverse flex-lg-row w-100">
-        <div class="col-12 col-lg-3 d-none d-lg-block">
+        <div class="col-12 col-lg-3 d-none d-lg-inline-block">
           <div class="row border-bottom border-secondary">
             <div class="col">
               <nav class="navbar navbar-expand-lg">
@@ -121,7 +124,7 @@
                   <div class="row">
                     <div class="col-2 mt-2">
                       <i
-                        class="bi bi-heart-fill fs-6 ps-2 pe-2 py-1"
+                        class="bi bi-heart-fill fs-5 ps-2 pe-2 py-1 rounded-1"
                         id="icona"
                       ></i>
                     </div>
@@ -140,7 +143,7 @@
                   <div class="row">
                     <div class="col-2">
                       <i
-                        class="bi bi-bookmark-fill fs-3 text-white bg-success px-1"
+                        class="bi bi-bookmark-fill fs-3 text-white bg-success px-1 rounded-1"
                       ></i>
                     </div>
                     <div class="col-10">
@@ -157,9 +160,12 @@
               </ul>
             </div>
           </div>
-          <div class="row d-none d-lg-block">
-            <div class="col-12 text-white w-100">
-              <ul id="Scrolling-col" class="list-group-item">
+          <div class="row d-none d-lg-inline-block">
+            <div class="col-12 text-white d-inline-block w-100">
+              <ul
+                id="Scrolling-col"
+                class="list-group-item d-flex flex-column overflow-scroll"
+              >
                 <li>Early stage emily syndrome (sett-ott 2022)</li>
                 <li>Be The Young</li>
                 <li>"..." cit. Kimiko (Jul-Aug 2022)</li>
@@ -174,6 +180,11 @@
                 <li>Lydia Emily</li>
                 <li>minecraft e nintendo switch (sep-oct 2021)</li>
                 <li>silvano d'orba? I hardly know her (lug - ago 2021)</li>
+                <li>Frah Quintale Mix</li>
+                <li>Frah Quintale Mix</li>
+                <li>Frah Quintale Mix</li>
+                <li>Frah Quintale Mix</li>
+                <li>Frah Quintale Mix</li>
                 <li>Frah Quintale Mix</li>
               </ul>
             </div>
@@ -190,7 +201,7 @@
                 <div class="dropdown">
                   <button
                     id="user"
-                    class="btn dropdown-toggle"
+                    class="btn dropdown-toggle rounded-pill px-3"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -203,14 +214,510 @@
                     Team 5 - BW2
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Lidia</a></li>
                     <li>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#"
+                        >Ioan Octavian Radulescu</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Marco Minisgallo</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Gabriele Carè</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Salvatore Gianquinto</a>
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >LeonardNicusor Dautaru</a
+                      >
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#">Massimo Noa Attardi</a>
                     </li>
                   </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              class="row g-4 pb-3 mt-2 text-white d-none d-lg-flex"
+              style="
+                background: linear-gradient(
+                  15deg,
+                  rgba(0, 0, 0, 1) 0%,
+                  rgba(0, 0, 0, 1) 10%,
+                  rgba(41, 46, 51, 0.18671218487394958) 100%
+                );
+              "
+            >
+              <div class="col-3">
+                <img
+                  class="w-100"
+                  src="./assets/imgs/main/image-1.jpg"
+                  alt="cover"
+                />
+              </div>
+              <div class="col-7">
+                <div class="col-12">
+                  <p>ALBUM</p>
+                </div>
+                <div class="col-12">
+                  <h2>LE AL QUARTIERE (feat.Vale...)</h2>
+                </div>
+                <div class="col-12">
+                  <p class="mt-2">Neima Ezza</p>
+                </div>
+                <div class="col-12">
+                  <p>Ascolta tutto l'album</p>
+                </div>
+                <div class="col-12">
+                  <button
+                    type="button"
+                    class="btn btn-success px-4 rounded-pill mt-3"
+                  >
+                    Play
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-light px-4 rounded-pill mt-3"
+                  >
+                    Salva
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-link fs-4 text-white text-decoration-none mt-2"
+                  >
+                    ...
+                  </button>
+                </div>
+              </div>
+              <div class="col-2">
+                <button
+                  type="button"
+                  class="btn btn-secondary rounded-pill mt-3"
+                  style="white-space: nowrap"
+                >
+                  Nascondi annunci
+                </button>
+              </div>
+            </div>
+            <div class="row g-3 text-white mt-lg-1">
+              <div class="col-12 ms-3 ms-lg-0">
+                <h1>Buonasera</h1>
+              </div>
+              <div
+                class="col-6 col-lg-4 bg-black bg-gradient py-3 rounded-2 h-75"
+              >
+                <div class="row">
+                  <div class="col-6 col-lg-3">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-2.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-3.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-4.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-5.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-9 pt-lg-3">
+                    <h6>Early stage emily...</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 bg-black bg-gradient py-3 rounded-2">
+                <div class="row">
+                  <div class="col-6 col-lg-3">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-6.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-7.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-8.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-9.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-9 pt-lg-3">
+                    <h6>Be The Young</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 bg-black bg-gradient py-3 rounded-2">
+                <div class="row">
+                  <div class="col-6 col-lg-3">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-10.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-11.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-12.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-13.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-9 pt-lg-3">
+                    <h6>Saggio vibes</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 bg-black bg-gradient py-3 rounded-2">
+                <div class="row">
+                  <div class="col-6 col-lg-3">
+                    <img
+                      class="w-100"
+                      src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da840c489c9523ae48b2c3d96177"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div class="col-6 col-lg-9 pt-lg-3">
+                    <h6>Brani che ti piacciono</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 bg-black bg-gradient py-3 rounded-2">
+                <div class="row">
+                  <div class="col-6 col-lg-3">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-14.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-15.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-16.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <img
+                          class="w-100"
+                          src="./assets/imgs/main/image-17.jpg"
+                          alt="cover-pic"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-9 pt-lg-3">
+                    <h6>2021 lol</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 bg-black bg-gradient py-3 rounded-2">
+                <div class="row">
+                  <div class="col-6 col-lg-3">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-18.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div class="col-6 col-lg-9 pt-lg-3">
+                    <h6>Deep Dive with Ali Abdaal</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid text-white">
+            <div class="row mt-3">
+              <div class="col-10 d-none d-lg-block">
+                <h4 class="pt-3">Altro di ciò che ti piace</h4>
+              </div>
+              <div class="col-2 text-center">
+                <button
+                  type="button"
+                  class="btn btn-secondary rounded-pill mt-3 d-none d-lg-block"
+                  style="white-space: nowrap"
+                >
+                  Visualizza tutto
+                </button>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-12 col-lg-2">
+                <div class="row mt-3">
+                  <div class="col-5 col-lg-12">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-14.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div
+                    class="col-7 col-lg-12 d-flex flex-column justify-content-center mt-2"
+                  >
+                    <h6>Allenamento a casa</h6>
+                    <p>La playlist per allenarsi al top</p>
+                  </div>
+                  <div class="col-12 mt-3 d-lg-none">
+                    <div class="row">
+                      <div class="col-1">
+                        <i class="bi bi-heart-fill ps-2 text-success fs-3"></i>
+                      </div>
+                      <div class="col-7">
+                        <i class="bi bi-three-dots-vertical fs-4"></i>
+                      </div>
+                      <div class="col-3">
+                        <p>16 brani</p>
+                      </div>
+                      <div class="col-1">
+                        <i
+                          class="bi bi-play-circle bg-black rounded-5 fs-3"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-2">
+                <div class="row mt-3">
+                  <div class="col-5 col-lg-12">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-13.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div
+                    class="col-7 col-lg-12 d-flex flex-column justify-content-center mt-2"
+                  >
+                    <h6>Pulizie di Casa</h6>
+                    <p>La playlist per pulire casa in compagnia</p>
+                  </div>
+                  <div class="col-12 mt-3 d-lg-none">
+                    <div class="row">
+                      <div class="col-1">
+                        <i class="bi bi-heart-fill ps-2 text-success fs-3"></i>
+                      </div>
+                      <div class="col-7">
+                        <i class="bi bi-three-dots-vertical fs-4"></i>
+                      </div>
+                      <div class="col-3">
+                        <p>16 brani</p>
+                      </div>
+                      <div class="col-1">
+                        <i
+                          class="bi bi-play-circle bg-black rounded-5 fs-3"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-2">
+                <div class="row mt-3">
+                  <div class="col-5 col-lg-12">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-12.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div
+                    class="col-7 col-lg-12 d-flex flex-column justify-content-center mt-2"
+                  >
+                    <h6>Hot Hits Italia</h6>
+                    <p>La playlist più calda del momento</p>
+                  </div>
+                  <div class="col-12 mt-3 d-lg-none">
+                    <div class="row">
+                      <div class="col-1">
+                        <i class="bi bi-heart-fill ps-2 text-success fs-3"></i>
+                      </div>
+                      <div class="col-7">
+                        <i class="bi bi-three-dots-vertical fs-4"></i>
+                      </div>
+                      <div class="col-3">
+                        <p>16 brani</p>
+                      </div>
+                      <div class="col-1">
+                        <i
+                          class="bi bi-play-circle bg-black rounded-5 fs-3"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-2">
+                <div class="row mt-3">
+                  <div class="col-5 col-lg-12">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-19.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div
+                    class="col-7 col-lg-12 d-flex flex-column justify-content-center mt-2"
+                  >
+                    <h6>Street culto</h6>
+                    <p>Vari artisti del rap italiano</p>
+                  </div>
+                  <div class="col-12 mt-3 d-lg-none">
+                    <div class="row">
+                      <div class="col-1">
+                        <i class="bi bi-heart-fill ps-2 text-success fs-3"></i>
+                      </div>
+                      <div class="col-7">
+                        <i class="bi bi-three-dots-vertical fs-4"></i>
+                      </div>
+                      <div class="col-3">
+                        <p>16 brani</p>
+                      </div>
+                      <div class="col-1">
+                        <i
+                          class="bi bi-play-circle bg-black rounded-5 fs-3"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-2">
+                <div class="row mt-3">
+                  <div class="col-5 col-lg-12">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-16.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div
+                    class="col-7 col-lg-12 d-flex flex-column justify-content-center mt-2"
+                  >
+                    <h6>Lavorare da casa</h6>
+                    <p>La playlist per lavorare in relax</p>
+                  </div>
+                  <div class="col-12 mt-3 d-lg-none">
+                    <div class="row">
+                      <div class="col-1">
+                        <i class="bi bi-heart-fill ps-2 text-success fs-3"></i>
+                      </div>
+                      <div class="col-7">
+                        <i class="bi bi-three-dots-vertical fs-4"></i>
+                      </div>
+                      <div class="col-3">
+                        <p>16 brani</p>
+                      </div>
+                      <div class="col-1">
+                        <i
+                          class="bi bi-play-circle bg-black rounded-5 fs-3"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-2">
+                <div class="row mt-3">
+                  <div class="col-5 col-lg-12">
+                    <img
+                      class="w-100"
+                      src="./assets/imgs/main/image-18.jpg"
+                      alt="cover-pic"
+                    />
+                  </div>
+                  <div
+                    class="col-7 col-lg-12 d-flex flex-column justify-content-center mt-2"
+                  >
+                    <h6>Estate 2022</h6>
+                    <p>La playlist più estiva di sempre!</p>
+                  </div>
+                  <div class="col-12 mt-3 d-lg-none">
+                    <div class="row">
+                      <div class="col-1">
+                        <i class="bi bi-heart-fill ps-2 text-success fs-3"></i>
+                      </div>
+                      <div class="col-7">
+                        <i class="bi bi-three-dots-vertical fs-4"></i>
+                      </div>
+                      <div class="col-3">
+                        <p>16 brani</p>
+                      </div>
+                      <div class="col-1">
+                        <i
+                          class="bi bi-play-circle bg-black rounded-5 fs-3"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -294,7 +801,7 @@
       </div>
     </div>
     <div
-      class="nav-bar d-lg-none fixed-bottom text-white bg-transparent d-flex justify-content-around pb-4"
+      class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around pb-4 z-2 bg-black pt-3"
     >
       <div class="nav-item text-center">
         <i class="bi bi-house-door fs-1"></i>
