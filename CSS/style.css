@@ -9,4 +9,9 @@
 
 #Scrolling-col li {
     margin-top: 15px;
+    padding-left: 1em;
+}
+
+#Scrolling-col {
+    padding-top: 1em;
 }
