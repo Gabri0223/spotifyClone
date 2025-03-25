@@ -16,6 +16,7 @@ const getArtistDetails = function () {
     })
     .then((data) => {
       console.log("DATA", data);
+
       const divName = document.getElementById("name");
       divName.setAttribute(
         "style",
@@ -37,6 +38,51 @@ const getArtistDetails = function () {
 <p> ${data.nb_fan} ascoltatori mensili</p>
 </div>
 `;
+      const albumUrl =
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
+      const getAlbums = function () {
+        fetch(albumUrl + data.name)
+          .then((response2) => {
+            console.log("RESPONSE2", response2);
+            if (response2.ok) {
+              return response2.json();
+            } else {
+              throw new Error("errore 2");
+            }
+          })
+          .then((data2) => {
+            console.log("DATA2", data2);
+            const trackList = document.getElementById("track-list");
+            data2.data.forEach((element, i) => {
+              trackList.innerHTML += `
+              <div class="col-1">
+              <p>${i + 1}</p>
+              </div>
+              <div class="col-2">
+              <img class="w-100" src="${
+                element.album.cover_small
+              }" alt="cover-pic">
+              </div>
+              <div class="col-4">
+              <h6>${element.title}</h6>
+              </div>
+              <div class="col-3">
+              <p>${element.rank}</p>
+              </div>
+              <div class="col-2">
+              <p>${Math.floor(element.duration / 60)}:${(element.duration % 60)
+                .toString()
+                .padStart(2, "0")}</p>
+              </div>
+              `;
+            });
+          })
+          .catch((error2) => {
+            console.log("errore2!!", error2);
+          });
+      };
+      getAlbums();
     })
     .catch((error) => {
       console.log("ERRORE NEL RECUPERO DEI DATI", error);
