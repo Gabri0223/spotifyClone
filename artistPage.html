@@ -182,14 +182,20 @@
 
           <div class="col-12 col-lg-8 text-white pe-0">
             <div id="sfumatura">
-              <div class="d-flex">
+              <div class="d-flex ps-3 fs-3">
                 <div class="col-9 d-none d-lg-block text-white">
-                  <i
-                    class="bi bi-arrow-left-circle bg-black fs-3 rounded-circle"
-                  ></i>
-                  <i
-                    class="bi bi-arrow-right-circle bg-black fs-3 rounded-circle"
-                  ></i>
+                  <span
+                    id="buttonArrow"
+                    class="bg-black d-lg-inline-flex align-items-center justify-content-center rounded-circle"
+                  >
+                    <i class="bi bi-arrow-left fs-3"></i>
+                  </span>
+                  <span
+                    id="buttonArrow"
+                    class="bg-black d-lg-inline-flex align-items-center justify-content-center rounded-circle bg-opacity-75"
+                  >
+                    <i class="bi bi-arrow-right opacity-100"></i>
+                  </span>
                 </div>
                 <div class="col-3 d-none d-lg-block">
                   <div class="dropdown d-flex">
@@ -233,10 +239,12 @@
                   />
                 </div>
                 <div
-                  class="ms-2 ms-lg-5 d-flex flex-column justify-content-end"
+                  class="ms-2 ms-lg-5 mb-lg-3 d-flex flex-column justify-content-end"
                 >
-                  <p id="titolo" class="fw-bold fs-2 m-0">Titolo album</p>
-                  <div class="w-75 d-flex">
+                  <p id="titolo" class="order-lg-2 fw-bold fs-2 m-0">
+                    Titolo album
+                  </p>
+                  <div class="w-75 d-flex order-lg-2">
                     <img
                       class="imgWidth rounded-circle me-3"
                       src="/assets/imgs/main/image-17.jpg"
@@ -244,18 +252,33 @@
                     />
                     <p class="fs-6 m-0">Nome artista</p>
                   </div>
-                  <p class="fs-6 text-secondary">album-anno</p>
+                  <p class="fs-6 text-secondary fw-bold order-lg-0 m-lg-0">
+                    album <span class="d-lg-none">-anno</span>
+                  </p>
                 </div>
               </div>
-              <div class="d-flex justify-content-between ms-2">
+              <div
+                class="d-flex justify-content-between ps-3 justify-content-lg-start py-lg-4 bg-black bg-opacity-25"
+              >
                 <div
-                  class="contenitore-icone d-flex justify-content-between fs-5"
+                  class="contenitore-icone d-flex justify-content-between fs-5 pt-3 justify-content-lg-start align-items-lg-center"
                 >
-                  <i class="bi bi-heart"></i>
-                  <i class="bi bi-download"></i>
-                  <i class="bi bi-three-dots-vertical"></i>
+                  <span
+                    id="buttonPlay2"
+                    class="bg-success d-lg-inline-flex align-items-center justify-content-center rounded-circle text-black fs-3 me-3 d-none"
+                  >
+                    <i class="bi bi-play-fill"></i>
+                  </span>
+                  <i class="bi bi-heart mx-lg-3 fontIcone"></i>
+                  <i class="bi bi-download mx-lg-3 fontIcone"></i>
+                  <i class="bi bi-three-dots-vertical d-lg-none"></i>
+                  <i
+                    class="bi bi-three-dots d-none d-lg-inline mx-lg-3 fontIcone"
+                  ></i>
                 </div>
-                <div class="w-25 d-flex fs-5 justify-content-around">
+                <div
+                  class="w-25 d-flex fs-5 justify-content-around contenitoreIcone pt-3 d-lg-none"
+                >
                   <i class="bi bi-shuffle"></i>
                   <span
                     id="buttonPlay"
@@ -265,16 +288,17 @@
                   </span>
                 </div>
               </div>
-            </div>
-            <div>
-              <ul>
-                <li>ciao</li>
-                <li>ciao</li>
-                <li>ciao</li>
-                <li>ciao</li>
-                <li>ciao</li>
-                <li>ciao</li>
-              </ul>
+              <div class="d-none d-lg-inline">
+                <div class="bg-black bg-opacity-25 ps-3">
+                  <div class="row border-bottom border-1 ms-1">
+                    <div class="col-1">#</div>
+                    <div class="col-6">titolo</div>
+                    <div class="col-4">riproduzioni</div>
+                    <div class="col-1"><i class="bi bi-clock"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row"></div>
             </div>
           </div>
 
