@@ -19,4 +19,33 @@
 
 footer button.btn:hover{
     color:black
+
+
 }
+
+.imgWidth{
+    width: 30px;
+    height:30px;
+}
+.contenitore-icone{
+    width: 30%;
+}
+#buttonPlay{
+    width: 40px; height: 40px
+}
+
+.img-custom {
+    width: 50% !important; 
+  }
+  
+  @media (min-width: 1200px) { 
+    .contenitoreFoto {
+      width: 25% !important;
+    }
+    .img-custom{
+        width: 100% !important;
+    }
+    
+}
+
+
