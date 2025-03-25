@@ -16,3 +16,7 @@
     padding-top: 1em;
     height: 70%;
 }
+
+footer button.btn:hover{
+    color:black
+}
