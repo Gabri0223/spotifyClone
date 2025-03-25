@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-    <div class="container-fluid bg-black d-flex" data-bs-theme="dark">
+    <div
+      class="container-fluid bg-black d-flex justify-content-center"
+      data-bs-theme="dark"
+    >
       <div class="row flex-column-reverse flex-lg-row w-100">
         <div class="col-12 col-lg-3 d-none d-lg-block">
           <div class="row border-bottom border-secondary">
@@ -177,7 +180,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-7 bg-dark mt">
+        <div class="col-12 col-lg-7 bg-dark mt min-vh-100">
           <div class="container-fluid mt-4">
             <div class="row">
               <div class="col-10 d-none d-lg-block text-white">
@@ -219,24 +222,48 @@
                 <!-- Qui verrà caricato l'album dinamicamente -->
               </div>
               <div class="row">
-                <div class="col-7">
-                  <div class="d-flex align-items-center my-4">
-                    <img src="./assets/imgs/play/play-circle-fill (4).svg" />
+                <div class="col-12 col-lg-7">
+                  <div
+                    class="d-flex align-items-center my-4 flex-row-reverse justify-content-between flex-lg-row justify-content-lg-start"
+                  >
+                    <div>
+                      <img
+                        src="./assets/imgs/play/repeat.svg"
+                        class="d-lg-none me-2"
+                      />
+                      <img src="./assets/imgs/play/play-circle-fill (4).svg" />
+                    </div>
                     <p
-                      class="text-white my-0 ms-4 border border-white py-1 px-2"
+                      class="text-white my-0 ms-4 border border-white py-1 px-2 m-sm-0 ms-lg-3 d-none d-lg-block"
                     >
                       FOLLOWING
                     </p>
+                    <button
+                      class="btn btn-dark btn-mobile d-lg-none border border-white"
+                    >
+                      Seguiti
+                    </button>
                   </div>
-                  <h4 class="text-white fw-bold">Popolari</h4>
+                  <p class="text-white d-lg-none mt-4 fs-4">
+                    Brani che ti piacciono
+                  </p>
+                  <ul
+                    id="liked-tracks"
+                    class="list-unstyled text-white d-lg-none"
+                  >
+                    <!-- Qui verranno mostrati i brani salvati (mobile)-->
+                  </ul>
+                  <h4 class="text-white fw-bold d-lg-block">Popolari</h4>
                   <ul id="track-list" class="list-unstyled text-white">
                     <!-- Qui verranno caricati i brani dell'album scelto in home dinamicamente -->
                   </ul>
                 </div>
-                <div class="col-5 align-content-end">
-                  <h4 class="text-white fw-bold">Brani che ti piacciono</h4>
+                <div class="col-12 col-lg-5 align-content-end">
+                  <h4 class="text-white fw-bold d-none d-lg-block">
+                    Brani che ti piacciono
+                  </h4>
                   <ul id="liked-tracks" class="list-unstyled text-white">
-                    <!-- Qui verranno mostrati i brani salvati 
+                    <!-- Qui verranno mostrati i brani salvati (desktop)
                      (in teoria esiste un modo che quando si clicca su un brano
                      finisce direttamente nei "brani che ti piacciono") -->
                   </ul>
@@ -323,7 +350,7 @@
       </div>
     </div>
     <div
-      class="nav-bar d-lg-none fixed-bottom text-white bg-transparent d-flex justify-content-around pb-4"
+      class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around pb-4 z-2 bg-black bg-opacity-75 pt-3"
     >
       <div class="nav-item text-center">
         <i class="bi bi-house-door fs-1"></i>
