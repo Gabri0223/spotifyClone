@@ -18,7 +18,7 @@ fetch(albumUrl + id)
     album = album.tracks.data;
     console.log(album);
     console.log(album[0].album.cover);
-    profileImg.setAttribute("src", album[0].album.cover);
+    profileImg.setAttribute("src", album[0].album.cover_xl);
     colorThief();
 
     const title = document.createElement("div");
