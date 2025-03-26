@@ -4,6 +4,7 @@ console.log(id);
 const albumUrl = " https://striveschool-api.herokuapp.com/api/deezer/album/";
 const myRow = document.getElementById("second-row");
 const firstRow = document.getElementById("first-row");
+const profileImg = document.getElementById("img");
 
 fetch(albumUrl + id)
   .then((response) => {
@@ -14,9 +15,12 @@ fetch(albumUrl + id)
     }
   })
   .then((album) => {
-    console.log(album.tracks);
     album = album.tracks.data;
     console.log(album);
+    console.log(album[0].album.cover);
+    profileImg.setAttribute("src", album[0].album.cover);
+    colorThief();
+
     const title = document.createElement("div");
     const artist = document.createElement("span");
     const num = document.createElement("div");
@@ -95,7 +99,7 @@ fetch(albumUrl + id)
     console.log("errore:", err);
   });
 
-document.addEventListener("DOMContentLoaded", function () {
+const colorThief = function () {
   const img = document.getElementById("img");
   const sfumatura = document.getElementById("sfumatura");
   const colorThief = new ColorThief();
@@ -111,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     )}), black)`;
     sfumatura.style.background = gradient;
   }
-});
+};
 
 // bottone cerca desktop
 const spanCerca = document.getElementById("spanCerca");
@@ -124,7 +128,9 @@ searchIcon.addEventListener("click", function () {
 // bottone cerca mobile
 const spanCercaMobile = document.getElementById("spanCercaMobile");
 const searchIconMobile = document.getElementById("searchIconMobile");
-const searchInputWrapperMobile = document.getElementById("searchInputWrapperMobile");
+const searchInputWrapperMobile = document.getElementById(
+  "searchInputWrapperMobile"
+);
 searchIconMobile.addEventListener("click", function () {
   searchInputWrapperMobile.classList.toggle("d-none");
   spanCercaMobile.classList.toggle("d-none");
