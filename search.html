@@ -14,22 +14,23 @@
     />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <body class="py-5 bg-dark">
+  <body class="py-5 bg-black">
     <div class="container-fluid">
       <h2 class="mb-4 text-white">Cerca</h2>
       <div class="position-relative">
         <i
-          class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-white"
+          id="searchIcon"
+          class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-secondary"
         ></i>
         <input
           type="text"
-          class="form-control mb-4 text-white p-2 bg-dark ps-4"
+          class="form-control mb-5 text-white p-2 bg-dark ps-4 rounded-1 border-dark"
           id="searchBox"
           placeholder="Cosa vuoi ascoltare?"
         />
       </div>
-      <h4 class="text-center my-3 text-white">Sfoglia tutto</h4>
-      <div class="row g-3">
+      <h3 class="text-center my-3 text-white">Sfoglia tutto</h3>
+      <div class="row g-4">
         <div class="col-6 col-md-4 col-lg-3">
           <div class="box bg-primary">
             <p class="h4">Podcast</p>
@@ -48,7 +49,7 @@
         </div>
         <div class="col-6 col-md-4 col-lg-3">
           <div class="box bg-danger">
-            <p class="h4">Nuove Uscite</p>
+            <p class="h4">Podcast</p>
             <div class="img-container">
               <img src="./assets/imgs/search/image-2.jpg" alt="Nuove Uscite" />
             </div>
