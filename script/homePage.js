@@ -153,8 +153,9 @@ searchIconMobile.addEventListener("click", function () {
 
 const getSearchedArtist = function (query) {
   const inputSearch = document.getElementById("inputSearch").value;
+  const inputSearchMobile = document.getElementById("inputSearchMobile").value;
 
-  query = inputSearch;
+  query = inputSearch || inputSearchMobile;
 
   fetch(url + query, {})
     .then((response) => {
@@ -167,7 +168,6 @@ const getSearchedArtist = function (query) {
     })
     .then((data3) => {
       console.log("DATA3", data3);
-      const searchButton = document.getElementById("searchButton");
 
       window.location.assign(`albumPage.html?id=${data3.data[0].artist.id}`);
     })

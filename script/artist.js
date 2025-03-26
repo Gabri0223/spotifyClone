@@ -56,12 +56,12 @@ const getArtistDetails = function () {
 
       const likedMobile = document.getElementById("liked-mobile");
       likedMobile.innerHTML = `
-      <div class="col-3 px-1">
-      <img class="w-100 rounded-circle" src="${data.picture_small}" alt="artist-pic">
+      <div class="col-2 px-1">
+      <img class="w-100 rounded-circle" src="${data.picture_big}" alt="artist-pic">
       </div>
-      <div class="col-9 px-2">
-      <h6>Ti sono piaciuti ${indexRandom} brani </h6>
-      <p>Di ${data.name}</p>
+      <div class="col-10 px-2 d-flex flex-column justify-content-center">
+      <h6 class="ms-3">Ti sono piaciuti ${indexRandom} brani </h6>
+      <p class="ms-3">Di ${data.name}</p>
       </div>
       `;
 
@@ -86,12 +86,12 @@ const getArtistDetails = function () {
               </div>
               <div class="col-2">
               <img class="w-100" src="${
-                element.album.cover_small
+                element.album.cover_big
               }" alt="cover-pic">
               </div>
               <div class="col-4">
-              <h6 class="track-title" data-album-cover="${
-                element.album.cover_small
+              <h6 class="track-title h-75 mb-0 d-flex align-items-center" data-album-cover="${
+                element.album.cover_big
               }" 
                 data-artist-name="${element.artist.name}" 
                 data-duration="${Math.floor(element.duration / 60)}:${(
@@ -101,12 +101,14 @@ const getArtistDetails = function () {
                 .padStart(2, "0")}">${element.title}</h6>
               </div>
               <div class="col-3">
-              <p>${element.rank}</p>
+              <small>${element.rank}</small>
               </div>
               <div class="col-2">
-              <p>${Math.floor(element.duration / 60)}:${(element.duration % 60)
+              <small>${Math.floor(element.duration / 60)}:${(
+                element.duration % 60
+              )
                 .toString()
-                .padStart(2, "0")}</p>
+                .padStart(2, "0")}</small>
               </div>
               `;
             });
@@ -162,8 +164,9 @@ searchIconMobile.addEventListener("click", function () {
 
 const getSearchedArtist = function (query) {
   const inputSearch = document.getElementById("inputSearch").value;
+  const inputSearchMobile = document.getElementById("inputSearchMobile").value;
 
-  query = inputSearch;
+  query = inputSearch || inputSearchMobile;
 
   fetch(albumUrl + query, {})
     .then((response) => {

@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <body>
+  <body class="bg-dark">
     <div
       class="container-fluid bg-black d-flex justify-content-center"
       data-bs-theme="dark"
@@ -293,7 +293,7 @@
                       </p>
                       <ul
                         id="liked-mobile"
-                        class="list-unstyled text-white d-lg-none mt-3"
+                        class="d-flex list-unstyled text-white d-lg-none mt-3"
                       >
                         <!-- LIKED
                   Qui verranno mostrati i brani salvati (mobile)-->
@@ -401,8 +401,10 @@
       class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around pb-4 z-2 bg-black bg-opacity-75 pt-3"
     >
       <div class="nav-item text-center">
-        <i class="bi bi-house-door fs-4"></i>
-        <div>Home</div>
+        <a href="./homePage.html" class="text-decoration-none text-white">
+          <i class="bi bi-house-door fs-4 d-block"></i>
+          Home</a
+        >
       </div>
       <a
         href="#"
