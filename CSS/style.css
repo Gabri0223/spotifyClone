@@ -112,5 +112,5 @@ footer button.btn:hover {
 }
 
 #searchBox::placeholder {
-  color: #e4e4e4;
+  color: gray;
 }
