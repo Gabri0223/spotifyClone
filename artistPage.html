@@ -22,9 +22,12 @@
       <div class="container-fluid bg-black d-flex p-0" data-bs-theme="dark">
         <div class="row flex-column-reverse flex-lg-row w-100">
           <div class="col-lg-2 d-none d-lg-block">
-            <div class="row border-bottom border-secondary">
+            <div
+              class="row border-bottom border-secondary"
+              style="height: 30vh"
+            >
               <div class="col">
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg" style="height: 28vh">
                   <div class="container-fluid">
                     <ul
                       id="navbarNav"
@@ -32,7 +35,7 @@
                     >
                       <li class="nav-item dropdown d-none d-lg-block">
                         <a
-                          class="nav-link dropdown-toggle"
+                          class="nav-link dropdown-toggle fs-3"
                           href="#"
                           role="button"
                           data-bs-toggle="dropdown"
@@ -52,41 +55,47 @@
                         </ul>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"
-                          ><div class="row d-flex align-items-baseline">
-                            <div class="col-3 offset-4 offset-lg-0">
-                              <i
-                                class="bi bi-house-door-fill fs-3 text-white"
-                              ></i>
-                            </div>
-                            <div class="col-8">
-                              <p class="d-none d-lg-block">Home</p>
-                            </div>
-                          </div></a
-                        >
+                        <a class="nav-link" aria-current="page" href="#">
+                          <p class="mb-0">
+                            <i class="bi bi-house-door-fill fs-5 p-2 ps-0"></i
+                            >Home
+                          </p>
+                        </a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"
-                          ><div class="row d-flex">
-                            <div class="col-3 offset-4 offset-lg-0">
-                              <i class="bi bi-search fs-3 text-white"></i>
-                            </div>
-                            <div class="col-8">
-                              <p class="d-none d-lg-block">Cerca</p>
-                            </div>
-                          </div></a
+                      <li>
+                        <a href="#" class="nav-link" id="searchIcon">
+                          <i class="bi bi-search fs-5 p-2 ps-0"></i
+                          ><span id="spanCerca"> Cerca</span></a
                         >
+                        <div
+                          id="searchInputWrapper"
+                          class="ps-2 d-none d-inline-block"
+                        >
+                          <div class="d-flex gap-3 align-items-center w-100">
+                            <input
+                              id="inputSearch"
+                              type="text"
+                              class="form-control bg-dark text-white p-1 border-0"
+                              placeholder="Film, genere..."
+                            />
+                            <button
+                              id="searchButton"
+                              class="btn btn-dark text-white rounded-3 p-1 px-2"
+                            >
+                              Cerca
+                            </button>
+                          </div>
+                        </div>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">
-                          <div class="row">
-                            <div class="col-3 offset-4 offset-lg-0">
-                              <i class="bi bi-collection fs-3 text-white"></i>
-                            </div>
-                            <div class="col-8">
-                              <p class="d-none d-lg-block">La tua libreria</p>
-                            </div>
-                          </div>
+                          <p
+                            class="d-none d-lg-block fw-bold"
+                            style="white-space: nowrap"
+                          >
+                            <i class="bi bi-collection fs-5 p-2 ps-0"></i>
+                            La tua libreria
+                          </p>
                         </a>
                       </li>
                     </ul>
@@ -186,15 +195,15 @@
                 <div class="col-9 d-none d-lg-block text-white">
                   <span
                     id="buttonArrow"
-                    class="bg-black d-lg-inline-flex align-items-center justify-content-center rounded-circle"
+                    class="bg-black d-lg-inline-flex align-items-center justify-content-center rounded-circle bg-transparent"
                   >
-                    <i class="bi bi-arrow-left fs-3"></i>
+                    <i class="bi bi-arrow-left-circle fs-3"></i>
                   </span>
                   <span
                     id="buttonArrow"
-                    class="bg-black d-lg-inline-flex align-items-center justify-content-center rounded-circle bg-opacity-75"
+                    class="bg-black d-lg-inline-flex align-items-center justify-content-center rounded-circle bg-transparent"
                   >
-                    <i class="bi bi-arrow-right opacity-100"></i>
+                    <i class="bi bi-arrow-right-circle bg-transparent"></i>
                   </span>
                 </div>
                 <div class="col-3 d-none d-lg-block">
@@ -380,21 +389,128 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div
-        class="nav-bar d-lg-none fixed-bottom text-white bg-transparent d-flex justify-content-around pb-4"
+    <div
+      class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around align-items-center pb-2 bg-transparent pt-1"
+    >
+      <div class="nav-item text-center">
+        <i class="bi bi-house-door fs-4"></i>
+        <div>Home</div>
+      </div>
+      <a
+        href="#"
+        class="text-center d-flex flex-column justify-content-center nav-link"
+        id="searchIconMobile"
       >
-        <div class="nav-item text-center">
-          <i class="bi bi-house-door fs-1"></i>
-          <div>Home</div>
+        <i class="bi bi-search fs-4"></i
+        ><span id="spanCercaMobile"> Cerca</span></a
+      >
+      <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
+        <div class="d-flex gap-3 align-items-center w-100">
+          <input
+            id="inputSearch"
+            type="text"
+            class="form-control bg-dark text-white p-1 border-0"
+            placeholder=""
+          />
+          <button
+            id="searchButton"
+            class="btn btn-dark text-white rounded-3 p-1 px-2"
+          >
+            Cerca
+          </button>
         </div>
-        <div class="nav-item text-center">
-          <i class="bi bi-search fs-1"></i>
-          <div>Cerca</div>
-        </div>
-        <div class="nav-item text-center">
-          <i class="bi bi-book fs-1"></i>
-          <div>La tua libreria</div>
+      </div>
+      <div class="nav-item text-center">
+        <i class="bi bi-book fs-4"></i>
+        <div>La tua libreria</div>
+      </div>
+    </div>
+    <footer>
+      <!-- PLAYER -->
+      <div class="containerfluid">
+        <div class="row d-none d-lg-block fixed-bottom bg-dark d-lg-flex">
+          <div class="col-4 d-flex align-items-center gap-3 px-4 py-2">
+            <img
+              src="https://i.scdn.co/image/ab67656300005f1fea9c7b3a0714fdeec6b6c05c"
+              alt=""
+              height="70"
+            />
+            <div class="d-flex flex-column">
+              <p class="m-0 text-white">Fat Funny Friend</p>
+              <small class="small text-white"> Maddie Zahm</small>
+            </div>
+            <i class="bi bi-heart text-white"></i>
+          </div>
+          <div class="col-5">
+            <div class="d-flex flex-row justify-content-center">
+              <button class="btn text-white">
+                <i class="bi bi-shuffle fs-5"></i>
+              </button>
+              <button class="btn text-white">
+                <i class="bi bi-skip-start-fill fs-3"></i>
+              </button>
+              <button class="btn text-white">
+                <i class="bi bi-play-circle-fill fs-1"></i>
+              </button>
+              <button class="btn text-white">
+                <i class="bi bi-skip-end-fill fs-3"></i>
+              </button>
+              <button class="btn text-white">
+                <i class="bi bi-repeat fs-5"></i>
+              </button>
+            </div>
+            <div
+              class="d-flex justify-content-center align-items-center w-100 mb-3 gap-3"
+            >
+              <span class="small text-white">0:58</span>
+              <div class="d-flex flex-column w-100">
+                <div
+                  class="progress"
+                  role="progressbar"
+                  aria-label="White example"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="background-color: gray; height: 5px"
+                >
+                  <div class="progress-bar bg-white" style="width: 90%"></div>
+                </div>
+              </div>
+              <span class="text-end small text-white">3:20</span>
+            </div>
+          </div>
+          <div class="col-3">
+            <div
+              class="d-flex align-items-center justify-content-end fs-4 text-secondary pe-4 pt-4 gap-1"
+            >
+              <button class="btn p-0">
+                <i class="bi bi-mic fs-4 text-white"></i>
+              </button>
+              <button class="btn p-0">
+                <i class="bi bi-list fs-4 text-white"></i>
+              </button>
+              <button class="btn p-0">
+                <i class="bi bi-speaker fs-4 text-white"></i>
+              </button>
+              <button class="btn p-0">
+                <i class="bi bi-volume-down-fill fs-2 text-white"></i>
+              </button>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="White example"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="background-color: gray; height: 5px; width: 25%"
+              >
+                <div class="progress-bar bg-white" style="width: 10%"></div>
+              </div>
+              <button class="btn p-0 me-2">
+                <i class="bi bi-arrows-angle-expand fs-5 text-white"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -23,9 +23,9 @@
     >
       <div class="row flex-column-reverse flex-lg-row w-100">
         <div class="col-12 col-lg-3 d-none d-lg-block">
-          <div class="row border-bottom border-secondary">
+          <div class="row border-bottom border-secondary" style="height: 30vh">
             <div class="col">
-              <nav class="navbar navbar-expand-lg">
+              <nav class="navbar navbar-expand-lg" style="height: 28vh">
                 <div class="container-fluid">
                   <ul
                     id="navbarNav"
@@ -33,7 +33,7 @@
                   >
                     <li class="nav-item dropdown d-none d-lg-block">
                       <a
-                        class="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle fs-3"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -53,46 +53,47 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"
-                        ><div class="row d-flex align-items-baseline">
-                          <div class="col-3 offset-4 offset-lg-0">
-                            <i
-                              class="bi bi-house-door-fill fs-3 text-white"
-                            ></i>
-                          </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">Home</p>
-                          </div>
-                        </div></a
-                      >
+                      <a class="nav-link" aria-current="page" href="#">
+                        <p class="mb-0">
+                          <i class="bi bi-house-door-fill fs-5 p-2 ps-0"></i
+                          >Home
+                        </p>
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="#"
-                        ><div class="row d-flex">
-                          <div class="col-3 offset-4 offset-lg-0">
-                            <i class="bi bi-search fs-3 text-white"></i>
-                          </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">Cerca</p>
-                          </div>
-                        </div></a
+                    <li>
+                      <a href="#" class="nav-link" id="searchIcon">
+                        <i class="bi bi-search fs-5 p-2 ps-0"></i
+                        ><span id="spanCerca"> Cerca</span></a
                       >
+                      <div
+                        id="searchInputWrapper"
+                        class="ps-2 d-none d-inline-block"
+                      >
+                        <div class="d-flex gap-3 align-items-center w-100">
+                          <input
+                            id="inputSearch"
+                            type="text"
+                            class="form-control bg-dark text-white p-1 border-0"
+                            placeholder="Film, genere..."
+                          />
+                          <button
+                            id="searchButton"
+                            class="btn btn-dark text-white rounded-3 p-1 px-2"
+                          >
+                            Cerca
+                          </button>
+                        </div>
+                      </div>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#">
-                        <div class="row">
-                          <div class="col-3 offset-4 offset-lg-0">
-                            <i class="bi bi-collection fs-3 text-white"></i>
-                          </div>
-                          <div class="col-8">
-                            <p
-                              style="white-space: nowrap"
-                              class="d-none d-lg-block"
-                            >
-                              La tua libreria
-                            </p>
-                          </div>
-                        </div>
+                        <p
+                          class="d-none d-lg-block fw-bold"
+                          style="white-space: nowrap"
+                        >
+                          <i class="bi bi-collection fs-5 p-2 ps-0"></i>
+                          La tua libreria
+                        </p>
                       </a>
                     </li>
                   </ul>
@@ -198,8 +199,12 @@
           <div id="content" class="container-fluid mt-4">
             <div id="name" class="row">
               <div class="col-9 d-none d-lg-block text-white">
-                <i class="bi bi-arrow-left-circle bg-black fs-3 rounded-5"></i>
-                <i class="bi bi-arrow-right-circle bg-black fs-3 rounded-5"></i>
+                <i
+                  class="bi bi-arrow-left-circle bg-transparent fs-3 rounded-5"
+                ></i>
+                <i
+                  class="bi bi-arrow-right-circle bg-transparent fs-3 rounded-5"
+                ></i>
               </div>
               <div class="col-2 d-none d-lg-block">
                 <div class="dropdown">
@@ -391,15 +396,35 @@
       class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around pb-4 z-2 bg-black bg-opacity-75 pt-3"
     >
       <div class="nav-item text-center">
-        <i class="bi bi-house-door fs-1"></i>
+        <i class="bi bi-house-door fs-4"></i>
         <div>Home</div>
       </div>
-      <div class="nav-item text-center">
-        <i class="bi bi-search fs-1"></i>
-        <div>Cerca</div>
+      <a
+        href="#"
+        class="text-center d-flex flex-column justify-content-center nav-link"
+        id="searchIconMobile"
+      >
+        <i class="bi bi-search fs-4"></i
+        ><span id="spanCercaMobile"> Cerca</span></a
+      >
+      <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
+        <div class="d-flex gap-3 align-items-center w-100">
+          <input
+            id="inputSearch"
+            type="text"
+            class="form-control bg-dark text-white p-1 border-0"
+            placeholder=""
+          />
+          <button
+            id="searchButton"
+            class="btn btn-dark text-white rounded-3 p-1 px-2"
+          >
+            Cerca
+          </button>
+        </div>
       </div>
       <div class="nav-item text-center">
-        <i class="bi bi-book fs-1"></i>
+        <i class="bi bi-book fs-4"></i>
         <div>La tua libreria</div>
       </div>
     </div>
@@ -440,7 +465,7 @@
             <div
               class="d-flex justify-content-center align-items-center w-100 mb-3 gap-3"
             >
-              <span class="small">0:58</span>
+              <span class="small text-white">0:58</span>
               <div class="d-flex flex-column w-100">
                 <div
                   class="progress"
@@ -454,7 +479,7 @@
                   <div class="progress-bar bg-white" style="width: 90%"></div>
                 </div>
               </div>
-              <span class="text-end small">3:20</span>
+              <span class="text-end small text-white">3:20</span>
             </div>
           </div>
           <div class="col-3">
