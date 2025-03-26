@@ -58,14 +58,15 @@ const getAlbano = function (query) {
         throw new Error("errore nella chiamata");
       }
     })
-    .then((data) => {
+    .then((data2) => {
+      console.log("DATA2", data2);
       const divA = document.getElementById("Albano");
       const indexRandom = Math.ceil(Math.random() * 25);
       divA.innerHTML = `
       <div class="col-3">
                 <img
                   class="w-100"
-                  src="${data.data[indexRandom].album.cover_medium}"
+                  src="${data2.data[indexRandom].album.cover_medium}"
                   alt="cover"
                 />
               </div>
@@ -74,16 +75,21 @@ const getAlbano = function (query) {
                   <p>ALBUM</p>
                 </div>
                 <div class="col-12">
-                  <h2>${data.data[indexRandom].album.title}</h2>
+                <a href="albumPage.html?id=${data2.data[indexRandom].album.id}" class="text-decoration-none text-white h2">
+                <h2>${data2.data[indexRandom].album.title}</h2>
+                </a>
                 </div>
                 <div class="col-12">
-                  <p class="mt-2">${data.data[indexRandom].artist.name}</p>
+                <a href="albumPage.html?id=${data2.data[indexRandom].album.id}" class="text-decoration-none text-white">
+                <p class="mt-2">${data2.data[indexRandom].artist.name}</p>
+                </a>
                 </div>
                 <div class="col-12">
                   <p>Stefano, ascoltati tutto l'album!</p>
                 </div>
                 <div class="col-12">
                   <button
+                    id="playAlbano"
                     type="button"
                     class="btn btn-success px-4 rounded-pill mt-3"
                   >
@@ -113,6 +119,22 @@ const getAlbano = function (query) {
                 </button>
               </div>
       `;
+      // Aggiungi l'event listener al bottone playAlbano
+      const playAlbanoButton = document.getElementById("playAlbano");
+      playAlbanoButton.addEventListener("click", function () {
+        const footerImg = document.getElementById("footerImg");
+        const footerTitle = document.getElementById("footerTitle");
+        const footerArtist = document.getElementById("footerArtist");
+        const footerDurata = document.getElementById("footerDurata");
+
+        // Aggiorna i contenuti del footer con i dati di data2.data[0]
+        footerImg.src = data2.data[indexRandom].album.cover_big;
+        footerTitle.innerText = data2.data[indexRandom].title;
+        footerArtist.innerText = data2.data[0].artist.name;
+        footerDurata.innerText = `${Math.floor(
+          data2.data[indexRandom].duration / 60
+        )}:${(data2.data[0].duration % 60).toString().padStart(2, "0")}`;
+      });
     })
     .catch((error) => {
       console.log("ERRORE NELLA FETCH", error);
