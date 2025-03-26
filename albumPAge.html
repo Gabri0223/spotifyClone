@@ -53,7 +53,10 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"
+                      <a
+                        class="nav-link active"
+                        aria-current="page"
+                        href="./homePage.html"
                         ><div class="row d-flex align-items-baseline">
                           <div class="col-3 offset-4 offset-lg-0">
                             <i
@@ -254,57 +257,57 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-12 col-lg-7">
-                  <div
-                    class="d-flex align-items-center my-4 flex-row-reverse justify-content-between flex-lg-row justify-content-lg-start"
-                  >
-                    <div
-                      class="d-flex align-items-center justify-content-center"
-                    >
-                      <i
-                        class="bi bi-shuffle text-success d-lg-none fs-3 me-3"
-                      ></i>
-                      <img src="./assets/imgs/play/play-circle-fill (4).svg" />
-                    </div>
-                    <p
-                      class="text-white my-0 ms-4 border border-white py-1 px-2 m-sm-0 ms-lg-3 d-none d-lg-block"
-                    >
-                      FOLLOWING
-                    </p>
-                    <button
-                      class="btn btn-dark btn-mobile d-lg-none border border-white"
-                    >
-                      Seguiti
-                    </button>
+                <div
+                  class="col-12 d-flex align-items-center my-4 flex-row-reverse justify-content-between flex-lg-row justify-content-lg-start"
+                >
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i
+                      class="bi bi-shuffle text-success d-lg-none fs-3 me-3"
+                    ></i>
+                    <img src="./assets/imgs/play/play-circle-fill (4).svg" />
                   </div>
-                  <p class="text-white d-lg-none mt-4 fs-4">
-                    Brani che ti piacciono
-                  </p>
-                  <ul
-                    id="liked-tracks"
-                    class="list-unstyled text-white d-lg-none"
+                  <p
+                    class="text-white my-0 ms-4 border border-white py-1 px-2 m-sm-0 ms-lg-3 d-none d-lg-block"
                   >
-                    <!-- Qui verranno mostrati i brani salvati (mobile)-->
-                  </ul>
-                  <h4 class="text-white fw-bold d-lg-block">Popolari</h4>
-                  <ul class="list-unstyled text-white">
-                    <!-- Qui verranno caricati i brani dell'album scelto in home dinamicamente -->
-                    <div
-                      id="track-list"
-                      class="row text-white overflow-scroll"
-                      style="height: 40vh"
-                    ></div>
-                  </ul>
+                    FOLLOWING
+                  </p>
+                  <button
+                    class="btn btn-dark btn-mobile d-lg-none border border-white"
+                  >
+                    Seguiti
+                  </button>
                 </div>
-                <div class="col-12 col-lg-5 align-content-end">
-                  <h4 class="text-white fw-bold d-none d-lg-block">
-                    Brani che ti piacciono
-                  </h4>
-                  <ul id="liked-tracks" class="list-unstyled text-white">
-                    <!-- Qui verranno mostrati i brani salvati (desktop)
-                     (in teoria esiste un modo che quando si clicca su un brano
-                     finisce direttamente nei "brani che ti piacciono") -->
-                  </ul>
+
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-12 col-lg-7">
+                      <p class="text-white d-lg-none mt-4 fs-4">
+                        Brani che ti piacciono
+                      </p>
+                      <ul
+                        id="liked-mobile"
+                        class="list-unstyled text-white d-lg-none mt-3"
+                      >
+                        <!-- LIKED
+                  Qui verranno mostrati i brani salvati (mobile)-->
+                      </ul>
+                      <h4 class="text-white fw-bold d-lg-block">Popolari</h4>
+                      <ul class="list-unstyled text-white">
+                        <!-- Qui verranno caricati i brani dell'album scelto in home dinamicamente -->
+                        <div
+                          id="track-list"
+                          class="row text-white overflow-scroll"
+                          style="height: 40vh"
+                        ></div>
+                      </ul>
+                    </div>
+                    <div
+                      class="col-12 col-lg-5 align-content-start d-none d-lg-block"
+                    >
+                      <h4 class="text-white fw-bold">Brani che ti piacciono</h4>
+                      <div id="liked-tracks" class="row text-white mt-3"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

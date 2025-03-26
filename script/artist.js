@@ -21,7 +21,7 @@ const getArtistDetails = function () {
       divName.setAttribute(
         "style",
         `background-image: url(${data.picture_big});background-size: 100% auto;
-  background-position: center;
+  background-position: 50% 30%;
   background-repeat: no-repeat;
   width: auto;`
       );
@@ -38,6 +38,31 @@ const getArtistDetails = function () {
 <p> ${data.nb_fan} ascoltatori mensili</p>
 </div>
 `;
+
+      const indexRandom = Math.ceil(Math.random() * 25);
+
+      const likedTracks = document.getElementById("liked-tracks");
+      likedTracks.innerHTML = `
+      <div class="col-3 px-1">
+      <img class="w-100 rounded-circle" src="${data.picture_small}" alt="artist-pic">
+      </div>
+      <div class="col-9 px-2">
+      <h6>Ti sono piaciuti ${indexRandom} brani </h6>
+      <p>Di ${data.name}</p>
+      </div>
+      `;
+
+      const likedMobile = document.getElementById("liked-mobile");
+      likedMobile.innerHTML = `
+      <div class="col-3 px-1">
+      <img class="w-100 rounded-circle" src="${data.picture_small}" alt="artist-pic">
+      </div>
+      <div class="col-9 px-2">
+      <h6>Ti sono piaciuti ${indexRandom} brani </h6>
+      <p>Di ${data.name}</p>
+      </div>
+      `;
+
       const albumUrl =
         "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -54,7 +79,7 @@ const getArtistDetails = function () {
           .then((data2) => {
             console.log("DATA2", data2);
             const trackList = document.getElementById("track-list");
-            data2.data.forEach((element, i) => {
+            data2.data.splice(0, 5).forEach((element, i) => {
               trackList.innerHTML += `
               <div class="col-1">
               <p>${i + 1}</p>
