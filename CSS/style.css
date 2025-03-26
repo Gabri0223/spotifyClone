@@ -62,4 +62,6 @@ footer button.btn:hover{
     }
 }
 
-
+.smallFont{
+    font-size: 0.8em;
+}
