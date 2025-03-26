@@ -16,16 +16,16 @@
     />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <body>
+  <body class="bg-dark">
     <div
       class="container-fluid bg-black d-flex justify-content-center"
       data-bs-theme="dark"
     >
       <div class="row flex-column-reverse flex-lg-row w-100">
         <div class="col-12 col-lg-3 d-none d-lg-block">
-          <div class="row border-bottom border-secondary">
+          <div class="row border-bottom border-secondary" style="height: 30vh">
             <div class="col">
-              <nav class="navbar navbar-expand-lg">
+              <nav class="navbar navbar-expand-lg" style="height: 28vh">
                 <div class="container-fluid">
                   <ul
                     id="navbarNav"
@@ -33,7 +33,7 @@
                   >
                     <li class="nav-item dropdown d-none d-lg-block">
                       <a
-                        class="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle fs-3"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -53,46 +53,52 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"
-                        ><div class="row d-flex align-items-baseline">
-                          <div class="col-3 offset-4 offset-lg-0">
-                            <i
-                              class="bi bi-house-door-fill fs-3 text-white"
-                            ></i>
-                          </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">Home</p>
-                          </div>
-                        </div></a
+                      <a
+                        class="nav-link"
+                        aria-current="page"
+                        href="./homePage.html"
                       >
+                        <p class="mb-0">
+                          <i class="bi bi-house-door-fill fs-5 p-2 ps-0"></i
+                          >Home
+                        </p>
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="#"
-                        ><div class="row d-flex">
-                          <div class="col-3 offset-4 offset-lg-0">
-                            <i class="bi bi-search fs-3 text-white"></i>
-                          </div>
-                          <div class="col-8">
-                            <p class="d-none d-lg-block">Cerca</p>
-                          </div>
-                        </div></a
+                    <li>
+                      <a href="#" class="nav-link" id="searchIcon">
+                        <i class="bi bi-search fs-5 p-2 ps-0"></i
+                        ><span id="spanCerca"> Cerca</span></a
                       >
+                      <div
+                        id="searchInputWrapper"
+                        class="ps-2 d-none d-inline-block"
+                      >
+                        <div class="d-flex gap-3 align-items-center w-100">
+                          <input
+                            id="inputSearch"
+                            type="text"
+                            class="form-control bg-dark text-white p-1 border-0"
+                            placeholder="Cerca artista"
+                          />
+                          <button
+                            id="searchButton"
+                            class="btn btn-dark text-white rounded-3 p-1 px-2"
+                            onclick="getSearchedArtist()"
+                          >
+                            Cerca
+                          </button>
+                        </div>
+                      </div>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#">
-                        <div class="row">
-                          <div class="col-3 offset-4 offset-lg-0">
-                            <i class="bi bi-collection fs-3 text-white"></i>
-                          </div>
-                          <div class="col-8">
-                            <p
-                              style="white-space: nowrap"
-                              class="d-none d-lg-block"
-                            >
-                              La tua libreria
-                            </p>
-                          </div>
-                        </div>
+                        <p
+                          class="d-none d-lg-block fw-bold"
+                          style="white-space: nowrap"
+                        >
+                          <i class="bi bi-collection fs-5 p-2 ps-0"></i>
+                          La tua libreria
+                        </p>
                       </a>
                     </li>
                   </ul>
@@ -198,8 +204,12 @@
           <div id="content" class="container-fluid mt-4">
             <div id="name" class="row">
               <div class="col-9 d-none d-lg-block text-white">
-                <i class="bi bi-arrow-left-circle bg-black fs-3 rounded-5"></i>
-                <i class="bi bi-arrow-right-circle bg-black fs-3 rounded-5"></i>
+                <i
+                  class="bi bi-arrow-left-circle bg-transparent fs-3 rounded-5"
+                ></i>
+                <i
+                  class="bi bi-arrow-right-circle bg-transparent fs-3 rounded-5"
+                ></i>
               </div>
               <div class="col-2 d-none d-lg-block">
                 <div class="dropdown">
@@ -254,57 +264,57 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-12 col-lg-7">
-                  <div
-                    class="d-flex align-items-center my-4 flex-row-reverse justify-content-between flex-lg-row justify-content-lg-start"
-                  >
-                    <div
-                      class="d-flex align-items-center justify-content-center"
-                    >
-                      <i
-                        class="bi bi-shuffle text-success d-lg-none fs-3 me-3"
-                      ></i>
-                      <img src="./assets/imgs/play/play-circle-fill (4).svg" />
-                    </div>
-                    <p
-                      class="text-white my-0 ms-4 border border-white py-1 px-2 m-sm-0 ms-lg-3 d-none d-lg-block"
-                    >
-                      FOLLOWING
-                    </p>
-                    <button
-                      class="btn btn-dark btn-mobile d-lg-none border border-white"
-                    >
-                      Seguiti
-                    </button>
+                <div
+                  class="col-12 d-flex align-items-center my-4 flex-row-reverse justify-content-between flex-lg-row justify-content-lg-start"
+                >
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i
+                      class="bi bi-shuffle text-success d-lg-none fs-3 me-3"
+                    ></i>
+                    <img src="./assets/imgs/play/play-circle-fill (4).svg" />
                   </div>
-                  <p class="text-white d-lg-none mt-4 fs-4">
-                    Brani che ti piacciono
-                  </p>
-                  <ul
-                    id="liked-tracks"
-                    class="list-unstyled text-white d-lg-none"
+                  <p
+                    class="text-white my-0 ms-4 border border-white py-1 px-2 m-sm-0 ms-lg-3 d-none d-lg-block"
                   >
-                    <!-- Qui verranno mostrati i brani salvati (mobile)-->
-                  </ul>
-                  <h4 class="text-white fw-bold d-lg-block">Popolari</h4>
-                  <ul class="list-unstyled text-white">
-                    <!-- Qui verranno caricati i brani dell'album scelto in home dinamicamente -->
-                    <div
-                      id="track-list"
-                      class="row text-white overflow-scroll"
-                      style="height: 40vh"
-                    ></div>
-                  </ul>
+                    FOLLOWING
+                  </p>
+                  <button
+                    class="btn btn-dark btn-mobile d-lg-none border border-white"
+                  >
+                    Seguiti
+                  </button>
                 </div>
-                <div class="col-12 col-lg-5 align-content-end">
-                  <h4 class="text-white fw-bold d-none d-lg-block">
-                    Brani che ti piacciono
-                  </h4>
-                  <ul id="liked-tracks" class="list-unstyled text-white">
-                    <!-- Qui verranno mostrati i brani salvati (desktop)
-                     (in teoria esiste un modo che quando si clicca su un brano
-                     finisce direttamente nei "brani che ti piacciono") -->
-                  </ul>
+
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-12 col-lg-7">
+                      <p class="text-white d-lg-none mt-4 fs-4">
+                        Brani che ti piacciono
+                      </p>
+                      <ul
+                        id="liked-mobile"
+                        class="d-flex list-unstyled text-white d-lg-none mt-3"
+                      >
+                        <!-- LIKED
+                  Qui verranno mostrati i brani salvati (mobile)-->
+                      </ul>
+                      <h4 class="text-white fw-bold d-lg-block">Popolari</h4>
+                      <ul class="list-unstyled text-white">
+                        <!-- Qui verranno caricati i brani dell'album scelto in home dinamicamente -->
+                        <div
+                          id="track-list"
+                          class="row text-white overflow-scroll"
+                          style="height: 40vh"
+                        ></div>
+                      </ul>
+                    </div>
+                    <div
+                      class="col-12 col-lg-5 align-content-start d-none d-lg-block"
+                    >
+                      <h4 class="text-white fw-bold">Brani che ti piacciono</h4>
+                      <div id="liked-tracks" class="row text-white mt-3"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -391,15 +401,38 @@
       class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around pb-4 z-2 bg-black bg-opacity-75 pt-3"
     >
       <div class="nav-item text-center">
-        <i class="bi bi-house-door fs-1"></i>
-        <div>Home</div>
+        <a href="./homePage.html" class="text-decoration-none text-white">
+          <i class="bi bi-house-door fs-4 d-block"></i>
+          Home</a
+        >
+      </div>
+      <a
+        href="#"
+        class="text-center d-flex flex-column justify-content-center nav-link"
+        id="searchIconMobile"
+      >
+        <i class="bi bi-search fs-4"></i
+        ><span id="spanCercaMobile"> Cerca</span></a
+      >
+      <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
+        <div class="d-flex gap-3 align-items-center w-100">
+          <input
+            id="inputSearchMobile"
+            type="text"
+            class="form-control bg-dark text-white p-1 border-0"
+            placeholder=""
+          />
+          <button
+            id="searchButtonMobile"
+            class="btn btn-dark text-white rounded-3 p-1 px-2"
+            onclick="getSearchedArtist()"
+          >
+            Cerca
+          </button>
+        </div>
       </div>
       <div class="nav-item text-center">
-        <i class="bi bi-search fs-1"></i>
-        <div>Cerca</div>
-      </div>
-      <div class="nav-item text-center">
-        <i class="bi bi-book fs-1"></i>
+        <i class="bi bi-book fs-4"></i>
         <div>La tua libreria</div>
       </div>
     </div>
@@ -409,13 +442,16 @@
         <div class="row d-none d-lg-block fixed-bottom bg-dark d-lg-flex">
           <div class="col-4 d-flex align-items-center gap-3 px-4 py-2">
             <img
+              id="footerImg"
               src="https://i.scdn.co/image/ab67656300005f1fea9c7b3a0714fdeec6b6c05c"
               alt=""
               height="70"
             />
             <div class="d-flex flex-column">
-              <p class="m-0 text-white">Fat Funny Friend</p>
-              <small class="small text-white"> Maddie Zahm</small>
+              <p id="footerTitle" class="m-0 text-white">Fat Funny Friend</p>
+              <small id="footerArtist" class="small text-white">
+                Maddie Zahm</small
+              >
             </div>
             <i class="bi bi-heart text-white"></i>
           </div>
@@ -440,7 +476,7 @@
             <div
               class="d-flex justify-content-center align-items-center w-100 mb-3 gap-3"
             >
-              <span class="small">0:58</span>
+              <span class="small text-white">0:58</span>
               <div class="d-flex flex-column w-100">
                 <div
                   class="progress"
@@ -454,7 +490,9 @@
                   <div class="progress-bar bg-white" style="width: 90%"></div>
                 </div>
               </div>
-              <span class="text-end small">3:20</span>
+              <span id="footerDurata" class="text-end small text-white"
+                >3:20</span
+              >
             </div>
           </div>
           <div class="col-3">

@@ -56,46 +56,48 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"
-                        ><div class="row d-flex align-items-baseline">
-                          <div class="col-5 offset-4 offset-lg-0">
-                            <i
-                              class="bi bi-house-door-fill fs-3 text-white"
-                            ></i>
-                          </div>
-                          <div class="col-7">
-                            <p class="d-none d-lg-block fw-bold">Home</p>
-                          </div>
-                        </div></a
-                      >
+                      <a class="nav-link" aria-current="page" href="#">
+                        <p class="mb-0">
+                          <i class="bi bi-house-door-fill fs-5 p-2 ps-0"></i
+                          >Home
+                        </p>
+                      </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="#"
-                        ><div class="row d-flex">
-                          <div class="col-5 offset-4 offset-lg-0">
-                            <i class="bi bi-search fs-3 text-white"></i>
-                          </div>
-                          <div class="col-7">
-                            <p class="d-none d-lg-block fw-bold">Cerca</p>
-                          </div>
-                        </div></a
+                    <li>
+                      <a href="#" class="nav-link" id="searchIcon">
+                        <i class="bi bi-search fs-5 p-2 ps-0"></i
+                        ><span id="spanCerca"> Cerca</span></a
                       >
+                      <div
+                        id="searchInputWrapper"
+                        class="ps-2 d-none d-inline-block"
+                      >
+                        <div class="d-flex gap-3 align-items-center w-100">
+                          <input
+                            id="inputSearch"
+                            type="text"
+                            class="form-control bg-dark text-white p-1 border-0"
+                            placeholder="Cerca un artista"
+                          />
+                          <button
+                            id="searchButton"
+                            class="btn btn-dark text-white rounded-3 p-1 px-2"
+                            onclick="getSearchedArtist()"
+                          >
+                            Cerca
+                          </button>
+                        </div>
+                      </div>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#">
-                        <div class="row">
-                          <div class="col-5 offset-4 offset-lg-0">
-                            <i class="bi bi-collection fs-3 text-white"></i>
-                          </div>
-                          <div class="col-7">
-                            <p
-                              class="d-none d-lg-block fw-bold"
-                              style="white-space: nowrap"
-                            >
-                              La tua libreria
-                            </p>
-                          </div>
-                        </div>
+                        <p
+                          class="d-none d-lg-block fw-bold"
+                          style="white-space: nowrap"
+                        >
+                          <i class="bi bi-collection fs-5 p-2 ps-0"></i>
+                          La tua libreria
+                        </p>
                       </a>
                     </li>
                   </ul>
@@ -207,8 +209,12 @@
           <div id="content" class="container-fluid mt-4 d-none">
             <div class="row">
               <div class="col-9 d-none d-lg-block text-white">
-                <i class="bi bi-arrow-left-circle bg-black fs-3 rounded-5"></i>
-                <i class="bi bi-arrow-right-circle bg-black fs-3 rounded-5"></i>
+                <i
+                  class="bi bi-arrow-left-circle bg-transparent fs-3 rounded-5"
+                ></i>
+                <i
+                  class="bi bi-arrow-right-circle bg-transparent fs-3 rounded-5"
+                ></i>
               </div>
               <div class="col-2 d-none d-lg-block">
                 <div class="dropdown">
@@ -651,18 +657,39 @@
       </div>
     </div>
     <div
-      class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around pb-4 z-2 bg-black bg-opacity-75 pt-3"
+      class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around align-items-center pb-2 bg-transparent pt-1"
     >
       <div class="nav-item text-center">
-        <i class="bi bi-house-door fs-1"></i>
+        <i class="bi bi-house-door fs-4"></i>
         <div>Home</div>
       </div>
-      <div class="nav-item text-center">
-        <i class="bi bi-search fs-1"></i>
-        <div>Cerca</div>
+      <a
+        href="#"
+        class="text-center d-flex flex-column justify-content-center nav-link"
+        id="searchIconMobile"
+      >
+        <i class="bi bi-search fs-4"></i
+        ><span id="spanCercaMobile"> Cerca</span></a
+      >
+      <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
+        <div class="d-flex gap-3 align-items-center w-100">
+          <input
+            id="inputSearchMobile"
+            type="text"
+            class="form-control bg-dark text-white p-1 border-0"
+            placeholder="Cerca un artista"
+          />
+          <button
+            id="searchButtonMobile"
+            class="btn btn-dark text-white rounded-3 p-1 px-2"
+            onclick="getSearchedArtist()"
+          >
+            Cerca
+          </button>
+        </div>
       </div>
       <div class="nav-item text-center">
-        <i class="bi bi-book fs-1"></i>
+        <i class="bi bi-book fs-4"></i>
         <div>La tua libreria</div>
       </div>
     </div>
@@ -672,13 +699,16 @@
         <div class="row d-none d-lg-block fixed-bottom bg-dark d-lg-flex">
           <div class="col-4 d-flex align-items-center gap-3 px-4 py-2">
             <img
+              id="footerImg"
               src="https://i.scdn.co/image/ab67656300005f1fea9c7b3a0714fdeec6b6c05c"
               alt=""
               height="70"
             />
             <div class="d-flex flex-column">
-              <p class="m-0 text-white">Fat Funny Friend</p>
-              <small class="small text-white"> Maddie Zahm</small>
+              <p id="footerTitle" class="m-0 text-white">Fat Funny Friend</p>
+              <small id="footerArtist" class="small text-white">
+                Maddie Zahm</small
+              >
             </div>
             <i class="bi bi-heart text-white"></i>
           </div>
@@ -703,7 +733,7 @@
             <div
               class="d-flex justify-content-center align-items-center w-100 mb-3 gap-3"
             >
-              <span class="small">0:58</span>
+              <span class="small text-white">0:58</span>
               <div class="d-flex flex-column w-100">
                 <div
                   class="progress"
@@ -717,7 +747,9 @@
                   <div class="progress-bar bg-white" style="width: 90%"></div>
                 </div>
               </div>
-              <span class="text-end small">3:20</span>
+              <span id="footerDurata" class="text-end small text-white"
+                >3:20</span
+              >
             </div>
           </div>
           <div class="col-3">
