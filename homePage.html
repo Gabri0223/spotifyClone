@@ -77,11 +77,12 @@
                             id="inputSearch"
                             type="text"
                             class="form-control bg-dark text-white p-1 border-0"
-                            placeholder="Film, genere..."
+                            placeholder="Cerca un artista"
                           />
                           <button
                             id="searchButton"
                             class="btn btn-dark text-white rounded-3 p-1 px-2"
+                            onclick="getSearchedArtist()"
                           >
                             Cerca
                           </button>
@@ -673,14 +674,15 @@
       <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
         <div class="d-flex gap-3 align-items-center w-100">
           <input
-            id="inputSearch"
+            id="inputSearchMobile"
             type="text"
             class="form-control bg-dark text-white p-1 border-0"
-            placeholder=""
+            placeholder="Cerca un artista"
           />
           <button
-            id="searchButton"
+            id="searchButtonMobile"
             class="btn btn-dark text-white rounded-3 p-1 px-2"
+            onclick="getSearchedArtist()"
           >
             Cerca
           </button>
@@ -697,13 +699,16 @@
         <div class="row d-none d-lg-block fixed-bottom bg-dark d-lg-flex">
           <div class="col-4 d-flex align-items-center gap-3 px-4 py-2">
             <img
+              id="footerImg"
               src="https://i.scdn.co/image/ab67656300005f1fea9c7b3a0714fdeec6b6c05c"
               alt=""
               height="70"
             />
             <div class="d-flex flex-column">
-              <p class="m-0 text-white">Fat Funny Friend</p>
-              <small class="small text-white"> Maddie Zahm</small>
+              <p id="footerTitle" class="m-0 text-white">Fat Funny Friend</p>
+              <small id="footerArtist" class="small text-white">
+                Maddie Zahm</small
+              >
             </div>
             <i class="bi bi-heart text-white"></i>
           </div>
@@ -742,7 +747,9 @@
                   <div class="progress-bar bg-white" style="width: 90%"></div>
                 </div>
               </div>
-              <span class="text-end small text-white">3:20</span>
+              <span id="footerDurata" class="text-end small text-white"
+                >3:20</span
+              >
             </div>
           </div>
           <div class="col-3">

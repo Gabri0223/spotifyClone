@@ -4,6 +4,8 @@ const artistId = URLparameters.get("id");
 
 const artistUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
+const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
 const getArtistDetails = function () {
   fetch(artistUrl + artistId)
     .then((response) => {
@@ -63,9 +65,6 @@ const getArtistDetails = function () {
       </div>
       `;
 
-      const albumUrl =
-        "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-
       const getAlbums = function () {
         fetch(albumUrl + data.name)
           .then((response2) => {
@@ -79,6 +78,7 @@ const getArtistDetails = function () {
           .then((data2) => {
             console.log("DATA2", data2);
             const trackList = document.getElementById("track-list");
+
             data2.data.splice(0, 5).forEach((element, i) => {
               trackList.innerHTML += `
               <div class="col-1">
@@ -90,7 +90,7 @@ const getArtistDetails = function () {
               }" alt="cover-pic">
               </div>
               <div class="col-4">
-              <h6>${element.title}</h6>
+              <h6 id="${element.title}">${element.title}</h6>
               </div>
               <div class="col-3">
               <p>${element.rank}</p>
@@ -127,8 +127,34 @@ searchIcon.addEventListener("click", function () {
 // bottone cerca mobile
 const spanCercaMobile = document.getElementById("spanCercaMobile");
 const searchIconMobile = document.getElementById("searchIconMobile");
-const searchInputWrapperMobile = document.getElementById("searchInputWrapperMobile");
+const searchInputWrapperMobile = document.getElementById(
+  "searchInputWrapperMobile"
+);
 searchIconMobile.addEventListener("click", function () {
   searchInputWrapperMobile.classList.toggle("d-none");
   spanCercaMobile.classList.toggle("d-none");
 });
+
+const getSearchedArtist = function (query) {
+  const inputSearch = document.getElementById("inputSearch").value;
+
+  query = inputSearch;
+
+  fetch(albumUrl + query, {})
+    .then((response) => {
+      console.log("RESPONSE", response);
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("errore nella chiamata");
+      }
+    })
+    .then((data3) => {
+      console.log("DATA3", data3);
+
+      window.location.assign(`albumPage.html?id=${data3.data[0].artist.id}`);
+    })
+    .catch((error) => {
+      console.log("ERRORE nella ricerca", error);
+    });
+};

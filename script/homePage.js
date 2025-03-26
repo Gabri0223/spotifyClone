@@ -143,8 +143,35 @@ searchIcon.addEventListener("click", function () {
 // bottone cerca mobile
 const spanCercaMobile = document.getElementById("spanCercaMobile");
 const searchIconMobile = document.getElementById("searchIconMobile");
-const searchInputWrapperMobile = document.getElementById("searchInputWrapperMobile");
+const searchInputWrapperMobile = document.getElementById(
+  "searchInputWrapperMobile"
+);
 searchIconMobile.addEventListener("click", function () {
   searchInputWrapperMobile.classList.toggle("d-none");
   spanCercaMobile.classList.toggle("d-none");
 });
+
+const getSearchedArtist = function (query) {
+  const inputSearch = document.getElementById("inputSearch").value;
+
+  query = inputSearch;
+
+  fetch(url + query, {})
+    .then((response) => {
+      console.log("RESPONSE", response);
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("errore nella chiamata");
+      }
+    })
+    .then((data3) => {
+      console.log("DATA3", data3);
+      const searchButton = document.getElementById("searchButton");
+
+      window.location.assign(`albumPage.html?id=${data3.data[0].artist.id}`);
+    })
+    .catch((error) => {
+      console.log("ERRORE nella ricerca", error);
+    });
+};
