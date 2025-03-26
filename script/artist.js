@@ -90,7 +90,15 @@ const getArtistDetails = function () {
               }" alt="cover-pic">
               </div>
               <div class="col-4">
-              <h6 id="${element.title}">${element.title}</h6>
+              <h6 class="track-title" data-album-cover="${
+                element.album.cover_small
+              }" 
+                data-artist-name="${element.artist.name}" 
+                data-duration="${Math.floor(element.duration / 60)}:${(
+                element.duration % 60
+              )
+                .toString()
+                .padStart(2, "0")}">${element.title}</h6>
               </div>
               <div class="col-3">
               <p>${element.rank}</p>
@@ -101,6 +109,23 @@ const getArtistDetails = function () {
                 .padStart(2, "0")}</p>
               </div>
               `;
+            });
+
+            // Aggiungi un event listener per ogni <h6> generato
+            const trackTitles = document.querySelectorAll(".track-title");
+            trackTitles.forEach((track) => {
+              track.addEventListener("click", function () {
+                const footerImg = document.getElementById("footerImg");
+                const footerTitle = document.getElementById("footerTitle");
+                const footerArtist = document.getElementById("footerArtist");
+                const footerDurata = document.getElementById("footerDurata");
+
+                // Aggiorna i contenuti del footer
+                footerImg.src = this.getAttribute("data-album-cover");
+                footerTitle.innerText = this.innerText;
+                footerArtist.innerText = this.getAttribute("data-artist-name");
+                footerDurata.innerText = this.getAttribute("data-duration");
+              });
             });
           })
           .catch((error2) => {
