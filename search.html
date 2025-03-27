@@ -17,17 +17,26 @@
   <body class="py-5 bg-black">
     <div class="container-fluid">
       <h2 class="mb-4 text-white">Cerca</h2>
-      <div class="position-relative">
-        <i
+      <div
+        class="position-relative d-flex justify-content-center align-items-center"
+      >
+        <!--<i
           id="searchIcon"
           class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-secondary"
-        ></i>
+        ></i> -->
         <input
           type="text"
-          class="form-control mb-5 text-white p-2 bg-dark ps-4 rounded-1 border-dark"
-          id="searchBox"
+          class="form-control mb-2 text-white p-2 bg-dark ps-4 rounded-1 border-dark"
+          id="inputSearchMobile"
           placeholder="Cosa vuoi ascoltare?"
         />
+        <button
+          id="searchButtonMobile"
+          class="btn btn-dark text-white rounded-3 p-2 px-2 mb-2 ms-2"
+          onclick="getSearchedArtist()"
+        >
+          Cerca
+        </button>
       </div>
       <h3 class="text-center my-3 text-white">Sfoglia tutto</h3>
       <div class="row g-4">
