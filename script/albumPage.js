@@ -5,6 +5,9 @@ const albumUrl = " https://striveschool-api.herokuapp.com/api/deezer/album/";
 const myRow = document.getElementById("second-row");
 const firstRow = document.getElementById("first-row");
 const profileImg = document.getElementById("img");
+const secondImg = document.getElementById("second-img");
+const albumTitle = document.getElementById("titolo");
+const artistName = document.getElementById("artist-name");
 
 fetch(albumUrl + id)
   .then((response) => {
@@ -17,9 +20,12 @@ fetch(albumUrl + id)
   .then((album) => {
     album = album.tracks.data;
     console.log(album);
-    console.log(album[0].album.cover);
     profileImg.setAttribute("src", album[0].album.cover_xl);
-    colorThief();
+    secondImg.setAttribute("src", album[0].album.cover_xl);
+    albumTitle.innerText = album[0].album.title;
+    artistName.innerText = album[0].artist.name;
+
+    colorThief(profileImg);
 
     const title = document.createElement("div");
     const artist = document.createElement("span");
@@ -99,8 +105,7 @@ fetch(albumUrl + id)
     console.log("errore:", err);
   });
 
-const colorThief = function () {
-  const img = document.getElementById("img");
+const colorThief = function (img) {
   const sfumatura = document.getElementById("sfumatura");
   const colorThief = new ColorThief();
   if (img.complete) {
