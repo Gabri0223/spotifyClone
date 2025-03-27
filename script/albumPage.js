@@ -8,6 +8,7 @@ const profileImg = document.getElementById("img");
 const secondImg = document.getElementById("second-img");
 const albumTitle = document.getElementById("titolo");
 const artistName = document.getElementById("artist-name");
+const heart = document.querySelectorAll(".heart");
 
 fetch(albumUrl + id)
   .then((response) => {
@@ -121,6 +122,15 @@ const colorThief = function (img) {
     sfumatura.style.background = gradient;
   }
 };
+
+//like button
+heart.forEach((heart) => {
+  heart.addEventListener("click", function () {
+    heart.classList.toggle("bi-heart-fill");
+    heart.classList.toggle("text-success");
+    heart.classList.toggle("bi-heart");
+  });
+});
 
 // bottone cerca desktop
 const spanCerca = document.getElementById("spanCerca");
