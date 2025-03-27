@@ -1,5 +1,28 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
+const footerAudio = document.getElementById("footerAudio");
+const playerButton = document.getElementById("playerButton");
+const playMobile = document.getElementById("playMobile");
+
+playerButton.addEventListener("click", function () {
+  if (footerAudio.paused) {
+    footerAudio.play(); // Riprendi la riproduzione
+    playerButton.innerHTML = '<i class="bi bi-pause-circle-fill fs-1"></i>'; // Cambia l'icona in "pausa"
+  } else {
+    footerAudio.pause(); // Metti in pausa
+    playerButton.innerHTML = '<i class="bi bi-play-circle-fill fs-1"></i>'; // Cambia l'icona in "play"
+  }
+});
+playMobile.addEventListener("click", function () {
+  if (footerAudio.paused) {
+    footerAudio.play(); // Riprendi la riproduzione
+    playMobile.innerHTML = '<i class="bi bi-pause-fill fs-1 text-success"></i>'; // Cambia l'icona in "pausa"
+  } else {
+    footerAudio.pause(); // Metti in pausa
+    playMobile.innerHTML = '<i class="bi bi-play-fill fs-1 text-success"></i>'; // Cambia l'icona in "play"
+  }
+});
+
 const hideSpinner = function () {
   const div = document.getElementById("spinner-container");
   div.classList.add("d-none");
@@ -61,12 +84,15 @@ const getAlbano = function (query) {
     .then((data2) => {
       console.log("DATA2", data2);
       const divA = document.getElementById("Albano");
-      const indexRandom = Math.ceil(Math.random() * 25);
+      const indexRandom = Math.floor(Math.random() * data2.data.length);
+
+      const trackAlbano = data2.data[indexRandom];
+
       divA.innerHTML = `
       <div class="col-3">
                 <img
                   class="w-100"
-                  src="${data2.data[indexRandom].album.cover_medium}"
+                  src="${trackAlbano.album.cover_medium}"
                   alt="cover"
                 />
               </div>
@@ -75,13 +101,13 @@ const getAlbano = function (query) {
                   <p>ALBUM</p>
                 </div>
                 <div class="col-12">
-                <a href="albumPage.html?id=${data2.data[indexRandom].album.id}" class="text-decoration-none text-white h2">
+                <a href="albumPage.html?id=${trackAlbano.album.id}" class="text-decoration-none text-white h2">
                 <h2>${data2.data[indexRandom].album.title}</h2>
                 </a>
                 </div>
                 <div class="col-12">
-                <a href="albumPage.html?id=${data2.data[indexRandom].album.id}" class="text-decoration-none text-white">
-                <p class="mt-2">${data2.data[indexRandom].artist.name}</p>
+                <a href="albumPage.html?id=${trackAlbano.album.id}" class="text-decoration-none text-white">
+                <p class="mt-2">${trackAlbano.artist.name}</p>
                 </a>
                 </div>
                 <div class="col-12">
@@ -122,18 +148,27 @@ const getAlbano = function (query) {
       // Aggiungi l'event listener al bottone playAlbano
       const playAlbanoButton = document.getElementById("playAlbano");
       playAlbanoButton.addEventListener("click", function () {
+        console.log("playAlbanoButton");
+        const titoloScorrevole = document.getElementById("titoloScorrevole");
+        const mobilePic = document.getElementById("mobilePic");
+        const footerAudio = document.getElementById("footerAudio");
         const footerImg = document.getElementById("footerImg");
         const footerTitle = document.getElementById("footerTitle");
         const footerArtist = document.getElementById("footerArtist");
         const footerDurata = document.getElementById("footerDurata");
 
         // Aggiorna i contenuti del footer con i dati di data2.data[0]
-        footerImg.src = data2.data[indexRandom].album.cover_big;
-        footerTitle.innerText = data2.data[indexRandom].title;
+        mobilePic.src = trackAlbano.album.cover_big;
+        titoloScorrevole.innerText = `${trackAlbano.title} - ${trackAlbano.artist.name}`;
+        footerAudio.src = trackAlbano.preview;
+        footerImg.src = trackAlbano.album.cover_big;
+        footerTitle.innerText = trackAlbano.title;
         footerArtist.innerText = data2.data[0].artist.name;
-        footerDurata.innerText = `${Math.floor(
-          data2.data[indexRandom].duration / 60
-        )}:${(data2.data[0].duration % 60).toString().padStart(2, "0")}`;
+        footerDurata.innerText = `${Math.floor(trackAlbano.duration / 60)}:${(
+          trackAlbano.duration % 60
+        )
+          .toString()
+          .padStart(2, "0")}`;
       });
     })
     .catch((error) => {

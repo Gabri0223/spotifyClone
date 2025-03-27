@@ -681,7 +681,7 @@
         </div>
         <i class="bi bi-phone text-white"></i>
         <i class="bi bi-heart ms-2 text-white"></i>
-        <button class="btn btn-link text-white ps-2">
+        <button id="playMobile" class="btn btn-link text-white ps-2">
           <i class="bi bi-play-fill fs-1 text-success"></i>
         </button>
       </div>
@@ -737,7 +737,7 @@
               <button class="btn text-white">
                 <i class="bi bi-skip-start-fill fs-3"></i>
               </button>
-              <button class="btn text-white">
+              <button id="playerButton" class="btn text-white">
                 <i class="bi bi-play-circle-fill fs-1"></i>
               </button>
               <button class="btn text-white">
@@ -764,6 +764,7 @@
                   <div class="progress-bar bg-white" style="width: 90%"></div>
                 </div>
               </div>
+              <audio id="footerAudio" class="d-none" controls src=""></audio>
               <span id="footerDurata" class="text-end small text-white"
                 >3:20</span
               >
