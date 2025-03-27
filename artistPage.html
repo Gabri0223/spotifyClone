@@ -404,39 +404,73 @@
       </div>
     </main>
     <div
-      class="nav-bar d-lg-none fixed-bottom text-white d-flex justify-content-around align-items-center pb-2 bg-transparent pt-1"
+      class="fixed-bottom d-lg-none mx-auto"
+      style="width: 95%; opacity: 90%"
     >
-      <div class="nav-item text-center">
-        <i class="bi bi-house-door fs-4"></i>
-        <div>Home</div>
-      </div>
-      <a
-        href="#"
-        class="text-center d-flex flex-column justify-content-center nav-link"
-        id="searchIconMobile"
-      >
-        <i class="bi bi-search fs-4"></i
-        ><span id="spanCercaMobile"> Cerca</span></a
-      >
-      <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
-        <div class="d-flex gap-3 align-items-center w-100">
-          <input
-            id="inputSearch"
-            type="text"
-            class="form-control bg-dark text-white p-1 border-0"
-            placeholder=""
-          />
-          <button
-            id="searchButton"
-            class="btn btn-dark text-white rounded-3 p-1 px-2"
+      <div class="bg-dark text-white p-2 rounded d-flex align-items-center">
+        <div
+          class="scroll-container flex-grow-1 d-flex flex-row align-items-center"
+        >
+          <div class="z-3" style="width: 10%; min-width: 60px">
+            <img
+              class="opacity-100 img-fluid"
+              src="https://api.deezer.com/album/552945182/image"
+              alt="albumPic"
+              id="mobilePic"
+            />
+          </div>
+          <span
+            class="scrolling-text text-white mb-0"
+            id="titoloScorrevole"
+            style="--i: 1"
+            >Supernatural Parody by The Hillywood Show</span
           >
-            Cerca
-          </button>
         </div>
+        <i class="bi bi-phone text-white"></i>
+        <i class="bi bi-heart ms-2 text-white"></i>
+        <button class="btn btn-link text-white ps-2">
+          <i class="bi bi-play-fill fs-1 text-success"></i>
+        </button>
       </div>
-      <div class="nav-item text-center">
-        <i class="bi bi-book fs-4"></i>
-        <div>La tua libreria</div>
+      <div
+        class="nav-bar d-lg-none text-white d-flex justify-content-around align-items-center py-2 bg-black"
+      >
+        <div class="nav-item text-center">
+          <a
+            href="/homePage.html"
+            class="text-decoration-none text-white d-flex flex-column"
+            ><i class="bi bi-house-door fs-4"></i>Home</a
+          >
+        </div>
+        <a
+          href="#"
+          class="text-center d-flex flex-column justify-content-center nav-link"
+          id="searchIconMobile"
+        >
+          <i class="bi bi-search fs-4"></i
+          ><span id="spanCercaMobile"> Cerca</span></a
+        >
+        <div id="searchInputWrapperMobile" class="ps-2 d-none d-inline-block">
+          <div class="d-flex gap-3 align-items-center w-100">
+            <input
+              id="inputSearchMobile"
+              type="text"
+              class="form-control bg-dark text-white p-1 border-0"
+              placeholder=""
+            />
+            <button
+              id="searchButtonMobile"
+              class="btn btn-dark text-white rounded-3 p-1 px-2"
+              onclick="getSearchedArtist()"
+            >
+              Cerca
+            </button>
+          </div>
+        </div>
+        <div class="nav-item text-center">
+          <i class="bi bi-book fs-4"></i>
+          <div>La tua libreria</div>
+        </div>
       </div>
     </div>
     <footer>
