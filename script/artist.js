@@ -6,6 +6,29 @@ const artistUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
 const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
+const footerAudio = document.getElementById("footerAudio");
+const playerButton = document.getElementById("playerButton");
+const playMobile = document.getElementById("playMobile");
+
+playerButton.addEventListener("click", function () {
+  if (footerAudio.paused) {
+    footerAudio.play(); // Riprendi la riproduzione
+    playerButton.innerHTML = '<i class="bi bi-pause-circle-fill fs-1"></i>'; // Cambia l'icona in "pausa"
+  } else {
+    footerAudio.pause(); // Metti in pausa
+    playerButton.innerHTML = '<i class="bi bi-play-circle-fill fs-1"></i>'; // Cambia l'icona in "play"
+  }
+});
+playMobile.addEventListener("click", function () {
+  if (footerAudio.paused) {
+    footerAudio.play(); // Riprendi la riproduzione
+    playMobile.innerHTML = '<i class="bi bi-pause-fill fs-1 text-success"></i>'; // Cambia l'icona in "pausa"
+  } else {
+    footerAudio.pause(); // Metti in pausa
+    playMobile.innerHTML = '<i class="bi bi-play-fill fs-1 text-success"></i>'; // Cambia l'icona in "play"
+  }
+});
+
 const getArtistDetails = function () {
   fetch(artistUrl + artistId)
     .then((response) => {
@@ -90,9 +113,10 @@ const getArtistDetails = function () {
               }" alt="cover-pic">
               </div>
               <div class="col-4">
-              <h6 class="track-title h-75 mb-0 d-flex align-items-center" data-album-cover="${
-                element.album.cover_big
-              }" 
+              <h6 class="track-title h-75 mb-0 d-flex align-items-center" data-preview=${
+                element.preview
+              }
+              data-album-cover="${element.album.cover_big}" 
                 data-artist-name="${element.artist.name}" 
                 data-duration="${Math.floor(element.duration / 60)}:${(
                 element.duration % 60
@@ -117,6 +141,7 @@ const getArtistDetails = function () {
             const trackTitles = document.querySelectorAll(".track-title");
             trackTitles.forEach((track) => {
               track.addEventListener("click", function () {
+                const footerAudio = document.getElementById("footerAudio");
                 const footerImg = document.getElementById("footerImg");
                 const footerTitle = document.getElementById("footerTitle");
                 const footerArtist = document.getElementById("footerArtist");
@@ -126,6 +151,8 @@ const getArtistDetails = function () {
                 const mobilePic = document.getElementById("mobilePic");
 
                 // Aggiorna i contenuti del footer e playerMobile
+
+                footerAudio.src = this.getAttribute("data-preview");
                 footerImg.src = this.getAttribute("data-album-cover");
                 mobilePic.src = this.getAttribute("data-album-cover");
                 footerTitle.innerText = this.innerText;
