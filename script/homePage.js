@@ -36,7 +36,7 @@ const getSong = function (query) {
       const id = document.getElementById(query);
       id.innerHTML = `
       <a href="albumPage.html?id=${data.data[0].artist.id}" class="text-decoration-none text-white h5">${query}</a>
-      <a href="artistPage.html?id=${data.data[indexRandom].album.id}" class='text-white text-decoration-none'>Ascolta il nuovo album di ${query}</p>
+      <a href="artistPage.html?id=${data.data[indexRandom].album.id}" class='text-white text-decoration-none small'>Ascolta il nuovo album di ${query}</a>
       `;
 
       const img = document.querySelector(`img.${query}`);
