@@ -14,7 +14,17 @@
     />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <body class="py-5 bg-black">
+  <body class="pb-5 bg-black">
+    <div style="margin-left: 0.1em" class="row mt-4 mb-3">
+      <div class="col-12">
+        <a
+          href="./homePage.html"
+          class="bg-success bg-opacity-75 py-3 rounded-pill"
+        >
+          <img style="width: 15vw" src="./assets/imgs/logo.svg" alt="logo" />
+        </a>
+      </div>
+    </div>
     <div class="container-fluid">
       <h2 class="mb-4 text-white">Cerca</h2>
       <div
@@ -278,6 +288,60 @@
               <img src="./assets/imgs/search/image-25.jpeg" alt="fuori ora" />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container- fluid fixed-bottom d-lg-none mx-auto bg-black"
+      style="width: 100%; opacity: 90%"
+    >
+      <div class="bg-dark text-white p-2 rounded d-flex align-items-center">
+        <div
+          class="scroll-container flex-grow-1 d-flex flex-row align-items-center"
+        >
+          <div class="z-3" style="width: 10%; min-width: 60px">
+            <img
+              class="opacity-100 img-fluid"
+              src="https://api.deezer.com/album/552945182/image"
+              alt="albumPic"
+              id="mobilePic"
+            />
+          </div>
+          <span
+            class="scrolling-text text-white mb-0"
+            id="titoloScorrevole"
+            style="--i: 1"
+            >Supernatural Parody by The Hillywood Show</span
+          >
+        </div>
+        <i class="bi bi-phone text-white"></i>
+        <i class="bi bi-heart ms-2 text-white"></i>
+        <button class="btn btn-link text-white ps-2">
+          <i class="bi bi-play-fill fs-1 text-success"></i>
+        </button>
+      </div>
+      <div
+        class="nav-bar d-lg-none text-white d-flex justify-content-around align-items-center py-2 bg-black"
+      >
+        <div class="nav-item text-center">
+          <a
+            href="/homePage.html"
+            class="text-decoration-none text-white d-flex flex-column"
+            ><i class="bi bi-house-door fs-4"></i>Home</a
+          >
+        </div>
+        <a
+          href="./search.html"
+          class="text-center d-flex flex-column justify-content-center nav-link"
+          id="searchIconMobile"
+        >
+          <i class="bi bi-search fs-4"></i
+          ><span id="spanCercaMobile"> Cerca</span></a
+        >
+
+        <div class="nav-item text-center">
+          <i class="bi bi-book fs-4"></i>
+          <div>La tua libreria</div>
         </div>
       </div>
     </div>
