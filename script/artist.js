@@ -199,9 +199,8 @@ searchIconMobile.addEventListener("click", function () {
 
 const getSearchedArtist = function (query) {
   const inputSearch = document.getElementById("inputSearch").value;
-  const inputSearchMobile = document.getElementById("inputSearchMobile").value;
 
-  query = inputSearch || inputSearchMobile;
+  query = inputSearch;
 
   fetch(albumUrl + query, {})
     .then((response) => {

@@ -2,6 +2,9 @@ const URLparameters = new URLSearchParams(location.search);
 const id = URLparameters.get("id");
 console.log(id);
 const albumUrl = " https://striveschool-api.herokuapp.com/api/deezer/album/";
+
+const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
 const myRow = document.getElementById("second-row");
 const firstRow = document.getElementById("first-row");
 const profileImg = document.getElementById("img");
@@ -150,3 +153,27 @@ searchIconMobile.addEventListener("click", function () {
   searchInputWrapperMobile.classList.toggle("d-none");
   spanCercaMobile.classList.toggle("d-none");
 });
+
+const getSearchedArtist = function (query) {
+  const inputSearch = document.getElementById("inputSearch").value;
+
+  query = inputSearch;
+
+  fetch(url + query, {})
+    .then((response) => {
+      console.log("RESPONSE", response);
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("errore nella chiamata");
+      }
+    })
+    .then((data3) => {
+      console.log("DATA3", data3);
+
+      window.location.assign(`albumPage.html?id=${data3.data[0].artist.id}`);
+    })
+    .catch((error) => {
+      console.log("ERRORE nella ricerca", error);
+    });
+};
