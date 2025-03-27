@@ -121,10 +121,18 @@ const getArtistDetails = function () {
                 const footerTitle = document.getElementById("footerTitle");
                 const footerArtist = document.getElementById("footerArtist");
                 const footerDurata = document.getElementById("footerDurata");
+                const titoloScorrevole =
+                  document.getElementById("titoloScorrevole");
+                const mobilePic = document.getElementById("mobilePic");
 
-                // Aggiorna i contenuti del footer
+                // Aggiorna i contenuti del footer e playerMobile
                 footerImg.src = this.getAttribute("data-album-cover");
+                mobilePic.src = this.getAttribute("data-album-cover");
                 footerTitle.innerText = this.innerText;
+                titoloScorrevole.innerText =
+                  this.innerText +
+                  " - " +
+                  this.getAttribute("data-artist-name");
                 footerArtist.innerText = this.getAttribute("data-artist-name");
                 footerDurata.innerText = this.getAttribute("data-duration");
               });
