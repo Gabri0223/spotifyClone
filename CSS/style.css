@@ -69,8 +69,8 @@ footer button.btn:hover {
   .fontIcone {
     font-size: 1.25em;
   }
-  #album{
-    color:white !important;
+  #album {
+    color: white !important;
   }
 }
 
@@ -109,30 +109,31 @@ footer button.btn:hover {
   border-radius: 10px;
 }
 
-#searchBox {
+#inputSearchMobile {
   background-color: #1b1b1b;
   color: white;
 }
 
-#searchBox::placeholder {
+#inputSearchMobile::placeholder {
   color: gray;
 }
 
 @keyframes scrollText {
-  0% { transform: translateX(80vW); }
-  100% { transform: translateX(-40vw); }
+  0% {
+    transform: translateX(80vw);
+  }
+  100% {
+    transform: translateX(-40vw);
+  }
 }
 
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
   animation: scrollText 10s linear infinite;
-
-
 }
 
 .scroll-container {
   overflow: hidden;
   width: 100%;
 }
-
