@@ -1,6 +1,6 @@
 const URLparameters = new URLSearchParams(location.search);
 const id = URLparameters.get("id");
-console.log(id);
+
 const albumUrl = " https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
@@ -12,6 +12,7 @@ const secondImg = document.getElementById("second-img");
 const albumTitle = document.getElementById("titolo");
 const artistName = document.getElementById("artist-name");
 const heart = document.querySelectorAll(".heart");
+const rightArrow = document.getElementById("arrow-right");
 
 fetch(albumUrl + id)
   .then((response) => {
@@ -30,6 +31,11 @@ fetch(albumUrl + id)
     artistName.innerText = album[0].artist.name;
 
     colorThief(profileImg);
+    rightArrow.addEventListener("click", function (e) {
+      e.preventDefault();
+      query = album[0].artist.id;
+      window.location.assign(`albumPage.html?id=${query}`);
+    });
 
     const title = document.createElement("div");
     const artist = document.createElement("span");
@@ -41,14 +47,28 @@ fetch(albumUrl + id)
     num.classList.add(
       "col-1",
       "text-end",
-      "ps-2",
-      "pe-1",
       "my-auto",
-      "text-secondary"
+      "text-secondary",
+      "d-none",
+      "d-lg-inline-block"
     );
     title.classList.add("col-6", "fw-bold");
-    riproduzioni.classList.add("col-4", "text-secondary", "my-auto");
-    durata.classList.add("col-1", "text-secondary", "my-auto");
+    riproduzioni.classList.add(
+      "col-4",
+      "text-secondary",
+      "my-auto",
+      "ps-4",
+      "d-none",
+      "d-lg-inline-block"
+    );
+    durata.classList.add(
+      "col-1",
+      "text-secondary",
+      "my-auto",
+      "ps-4",
+      "d-none",
+      "d-lg-inline-block"
+    );
 
     num.innerText = 1;
     artist.innerText = `${album[0].artist.name}`;
@@ -78,14 +98,28 @@ fetch(albumUrl + id)
       num.classList.add(
         "col-1",
         "text-end",
-        "ps-2",
-        "pe-1",
         "my-auto",
-        "text-secondary"
+        "text-secondary",
+        "d-none",
+        "d-lg-inline-block"
       );
-      title.classList.add("col-6", "fw-bold", "mb-2");
-      riproduzioni.classList.add("col-4", "text-secondary", "my-auto");
-      durata.classList.add("col-1", "text-secondary", "my-auto");
+      title.classList.add("col-lg-6", "fw-bold", "mb-2", "col-11");
+      riproduzioni.classList.add(
+        "col-4",
+        "text-secondary",
+        "my-auto",
+        "ps-4",
+        "d-none",
+        "d-lg-inline-block"
+      );
+      durata.classList.add(
+        "col-1",
+        "text-secondary",
+        "my-auto",
+        "ps-4",
+        "d-none",
+        "d-lg-inline-block"
+      );
 
       num.innerText = i + 2;
       artist.innerText = `${track.artist.name}`;

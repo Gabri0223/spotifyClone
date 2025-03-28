@@ -58,8 +58,9 @@ const getSong = function (query) {
       const indexRandom = Math.ceil(Math.random() * 25);
       const id = document.getElementById(query);
       id.innerHTML = `
-      <a href="albumPage.html?id=${data.data[0].artist.id}" class="text-decoration-none text-white h5">${query}</a>
-      <a href="artistPage.html?id=${data.data[indexRandom].album.id}" class='text-white text-decoration-none small'>Ascolta il nuovo album di ${query}</a>
+      <a href="albumPage.html?id=${data.data[0].artist.id}" class="text-decoration-none text-white h6">${query}</a>
+      <a href="artistPage.html?id=${data.data[indexRandom].album.id}" class='text-white text-decoration-none small d-none d-lg-inline'>Ascolta il nuovo album di ${query}</a>
+      <a href="artistPage.html?id=${data.data[indexRandom].album.id}" class='text-white text-decoration-none small d-lg-inline d-lg-none'>Ascolta il suo album</a>
       `;
 
       const img = document.querySelector(`img.${query}`);
