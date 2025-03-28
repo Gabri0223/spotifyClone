@@ -55,7 +55,7 @@ const getSong = function (query) {
     .then((data) => {
       console.log("DATA", data);
       hideSpinner();
-      const indexRandom = Math.ceil(Math.random() * 25);
+      const indexRandom = Math.ceil(Math.random() * 24);
       const id = document.getElementById(query);
       id.innerHTML = `
       <a href="albumPage.html?id=${data.data[0].artist.id}" class="text-decoration-none text-white h6">${query}</a>
