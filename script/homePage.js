@@ -138,6 +138,7 @@ const getAlbano = function (query) {
               </div>
               <div class="col-2">
                 <button
+                id="nascondiButton"
                   type="button"
                   class="btn btn-secondary rounded-pill mt-3"
                   style="white-space: nowrap"
@@ -146,6 +147,16 @@ const getAlbano = function (query) {
                 </button>
               </div>
       `;
+      //funzione nascondi button
+      const nascondiButton = document.getElementById("nascondiButton");
+      console.log(nascondiButton);
+      nascondiButton.addEventListener("click", function () {
+        console.log("ciao");
+        const albanoNascosto = document.getElementById("Albano");
+        console.log(albanoNascosto);
+        albanoNascosto.classList.add("d-lg-none");
+        albanoNascosto.classList.add("d-none");
+      });
       // Aggiungi l'event listener al bottone playAlbano
       const playAlbanoButton = document.getElementById("playAlbano");
       playAlbanoButton.addEventListener("click", function () {
