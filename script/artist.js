@@ -53,14 +53,19 @@ const getArtistDetails = function () {
 
       const rowInfo = document.getElementById("info-artist");
       rowInfo.innerHTML = `
+      <div class="fs-3 d-lg-none mb-5 pt-2">
+      <span class="bg-secondary d-inline-flex align-items-center justify-content-center rounded-circle bg-opacity-50" id="buttonArrow">
+      <i class="bi bi-arrow-left text-black"></i>
+      </span>
+      </div>
 <div class="col-12 mt-5">
-<p> <i class="bi bi-patch-check-fill text-primary"></i> Artista verificato</p>
+<p class="mb-0 d-none d-lg-inline fs-5"><i class="bi bi-patch-check-fill text-primary"></i> Artista verificato</p>
 </div>
-<div class="col-12">
-<h1>${data.name}</h1>
+<div class="col-12 mb-lg-3 ">
+<h1 class="fw-bolder titolo">${data.name}</h1>
 </div>
-<div class="col-12">
-<p> ${data.nb_fan} ascoltatori mensili</p>
+<div class="col-12 d-flex d-none d-lg-inline mb-xl-5">
+<p class="mb-xl-5"> ${data.nb_fan} ascoltatori mensili</p>
 </div>
 `;
 
@@ -105,14 +110,14 @@ const getArtistDetails = function () {
             data2.data.splice(0, 5).forEach((element, i) => {
               trackList.innerHTML += `
               <div class="col-1">
-              <p>${i + 1}</p>
+              <p class="my-auto">${i + 1}</p>
               </div>
               <div class="col-2">
-              <img class="w-100" src="${
+              <img class="w-100 mb-xl-2" src="${
                 element.album.cover_big
               }" alt="cover-pic">
               </div>
-              <div class="col-4">
+              <div class="col-8 col-lg-4 ">
               <h6 class="track-title h-75 mb-0 d-flex align-items-center" data-preview=${
                 element.preview
               }
@@ -124,17 +129,17 @@ const getArtistDetails = function () {
                 .toString()
                 .padStart(2, "0")}">${element.title}</h6>
               </div>
-              <div class="col-3">
+              <div class="col-3 d-none d-lg-inline">
               <small>${element.rank}</small>
               </div>
-              <div class="col-2">
+              <div class="col-2 d-none d-lg-inline">
               <small>${Math.floor(element.duration / 60)}:${(
                 element.duration % 60
               )
                 .toString()
                 .padStart(2, "0")}</small>
               </div>
-              `;
+              <div class="col-1 d-inline d-lg-none"><a href="#" class="text-decoration-none text-white"><i class="bi bi-three-dots-vertical"></i></a></div>`;
             });
 
             // Aggiungi un event listener per ogni <h6> generato

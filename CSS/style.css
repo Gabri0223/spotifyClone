@@ -137,3 +137,7 @@ footer button.btn:hover {
   overflow: hidden;
   width: 100%;
 }
+
+.titolo{
+  font-size: 4em !important
+}
