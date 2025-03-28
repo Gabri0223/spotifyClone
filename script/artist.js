@@ -109,18 +109,16 @@ const getArtistDetails = function () {
 
             data2.data.splice(0, 5).forEach((element, i) => {
               trackList.innerHTML += `
-              <div class="col-1">
-              <p class="my-auto">${i + 1}</p>
+              <div class="col-1 d-flex align-items-center">
+              <p>${i + 1}</p>
               </div>
-              <div class="col-2">
-              <img class="w-100 mb-xl-2" src="${
+              <div class="col-2 d-flex align-items-center">
+              <img class="w-100 mb-xl-2 " src="${
                 element.album.cover_big
               }" alt="cover-pic">
               </div>
-              <div class="col-8 col-lg-4 ">
-              <h6 class="track-title h-75 mb-0 d-flex align-items-center" data-preview=${
-                element.preview
-              }
+              <div class="col-8 col-lg-4 d-flex align-items-center">
+              <h6 class="track-title mb-0 " data-preview=${element.preview}
               data-album-cover="${element.album.cover_big}" 
                 data-artist-name="${element.artist.name}" 
                 data-duration="${Math.floor(element.duration / 60)}:${(
@@ -129,10 +127,10 @@ const getArtistDetails = function () {
                 .toString()
                 .padStart(2, "0")}">${element.title}</h6>
               </div>
-              <div class="col-3 d-none d-lg-inline">
-              <small>${element.rank}</small>
+              <div class="col-3 d-none d-lg-flex align-items-center">
+              <small class="">${element.rank}</small>
               </div>
-              <div class="col-2 d-none d-lg-inline">
+              <div class="col-2 d-none d-lg-flex align-items-center">
               <small>${Math.floor(element.duration / 60)}:${(
                 element.duration % 60
               )

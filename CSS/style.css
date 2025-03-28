@@ -72,6 +72,8 @@ footer button.btn:hover {
   #album {
     color: white !important;
   }
+  .bg-lg-dark {
+    background-color: #2a2f34 !important;
 }
 
 .smallFont {
